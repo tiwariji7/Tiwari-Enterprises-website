@@ -3,147 +3,177 @@ import { SITE_CONFIG } from '../../utils/seo';
 
 const heroSlides = [
   {
+    id: 'sliding-systems',
     image: '/images/hero/hero-sliding.webp',
-    alt: 'Floor-to-ceiling thermal-break aluminium sliding systems',
+    alt: 'Luxury contemporary villa with expansive glass panels and slim black aluminium sliding frames',
     indexStr: '01',
-    category: 'MINIMALIST SLIDING SYSTEMS',
-    headline: 'SPACES CRAFTED TO PERFECTION.',
-    description: 'Floor-to-ceiling thermal-break sliding doors engineered with flush sub-floor tracks, weather-sealed gaskets, and whisper-quiet roller bearings for contemporary architecture.',
-    system: 'Architectural Aluminium Sliding System',
-    tags: ['6063-T6 Architectural Alloy', '18mm Ultra-Slim Interlock', 'Multi-Point Locking', 'Flush Sub-Floor Tracks'],
-    ctaText: 'Explore Sliding Systems',
-    ctaLink: '/solutions/aluminium',
+    category: 'PREMIUM ALUMINIUM SLIDING SYSTEMS',
+    headline: 'Spaces Crafted to Perfection.',
+    description: 'Premium aluminium sliding doors and windows designed for seamless transitions, refined aesthetics and everyday functionality.',
+    tags: ['SLIMLINE PROFILES', 'PRECISION ENGINEERING', 'SMOOTH OPERATION'],
+    primaryCta: { label: 'Explore Aluminium Systems →', href: '/solutions/aluminium' },
+    secondaryCta: { label: 'Start a Project', href: '/start-a-project' },
+    whatsappMsg: 'Hello Tiwari Enterprises, I would like to inquire about premium aluminium sliding systems in Pune.',
   },
   {
+    id: 'structural-glazing',
     image: '/images/hero/hero-glazing.webp',
-    alt: 'High-performance architectural glass facade and curtain wall glazing',
+    alt: 'Expansive contemporary architectural glass facade and structural aluminium curtain walls',
     indexStr: '02',
     category: 'STRUCTURAL GLAZING & CURTAIN WALLS',
-    headline: 'CLARITY & STRUCTURAL ELEGANCE.',
-    description: 'High-performance solar-control double glazing and precision aluminium curtain walls engineered for elevated wind loads, thermal insulation, and seamless visual expanses.',
-    system: 'Structural Curtain Glazing System',
-    tags: ['Solar Low-E Double Glazed', 'BIS Certified Toughened Glass', '32mm Acoustic Barrier', 'Engineered Wind-Load Rating'],
-    ctaText: 'Explore Glass Facades',
-    ctaLink: '/solutions/glass',
+    headline: 'Architecture Defined by Glass.',
+    description: 'Contemporary glazing solutions that combine clean architectural lines, natural light and precision aluminium framing.',
+    tags: ['GLASS FACADES', 'ALUMINIUM FRAMING', 'MODERN ARCHITECTURE'],
+    primaryCta: { label: 'Explore Glass Facades →', href: '/solutions/glass' },
+    secondaryCta: { label: 'Start a Project', href: '/start-a-project' },
+    whatsappMsg: 'Hello Tiwari Enterprises, I would like to inquire about structural glazing and curtain walls in Pune.',
   },
   {
+    id: 'frameless-railings',
     image: '/images/hero/hero-balustrades.webp',
-    alt: 'Continuous frameless structural glass balustrades and terrace railings',
+    alt: 'Contemporary luxury residence with continuous frameless glass balcony railings and panoramic views',
     indexStr: '03',
-    category: 'FRAMELESS GLASS BALUSTRADES',
-    headline: 'UNBROKEN PANORAMIC EXPANSES.',
-    description: 'Continuous recessed base-shoe balustrades engineered with SentryGlas (SGP) laminated safety glass to withstand elevated wind loads while keeping expansive sightlines unbroken.',
-    system: 'Heavy-Duty Glass Balustrade System',
-    tags: ['17.52mm SGP Laminated Safety Glass', 'Marine Grade SS316 Slim Cap', 'Zero Vertical Posts', 'Structural Base Shoe'],
-    ctaText: 'Explore Glass Railings',
-    ctaLink: '/solutions/glass',
+    category: 'FRAMELESS GLASS RAILINGS',
+    headline: 'An Uninterrupted View of Luxury.',
+    description: 'Minimal glass railing solutions that bring openness, elegance and a seamless visual connection to modern architecture.',
+    tags: ['MINIMAL FRAME DESIGN', 'SAFETY GLASS OPTIONS', 'CUSTOM INSTALLATION'],
+    primaryCta: { label: 'Explore Glass Railings →', href: '/solutions/glass' },
+    secondaryCta: { label: 'Start a Project', href: '/start-a-project' },
+    whatsappMsg: 'Hello Tiwari Enterprises, I would like to inquire about frameless glass railings in Pune.',
   },
   {
+    id: 'acoustic-partitions',
     image: '/images/hero/hero-partitions.webp',
-    alt: 'Architectural acoustic glass partition systems and interior pivot doors',
+    alt: 'Sophisticated modern office with slim aluminium-framed glass partitions and natural daylight',
     indexStr: '04',
-    category: 'ACOUSTIC INTERIOR PARTITIONS',
-    headline: 'ACOUSTIC INTEGRITY IN GLASS.',
-    description: 'Demountable slimline partition walls and frameless architectural pivot doors delivering certified acoustic isolation and natural daylight for executive workspaces and residences.',
-    system: 'Precision Acoustic Partition System',
-    tags: ['Certified Rw 42dB Sound Attenuation', 'Concealed Hydraulic Floor Springs', 'Matte Black Anodised Frame', 'Flush Acoustic Gaskets'],
-    ctaText: 'Explore Office Partitions',
-    ctaLink: '/solutions/glass',
+    category: 'ACOUSTIC GLASS PARTITIONS',
+    headline: 'Privacy. Without Compromising Light.',
+    description: 'Elegant glass partition systems designed to define spaces while maintaining openness, natural light and a refined architectural finish.',
+    tags: ['SLIMLINE FRAMES', 'MODERN OFFICE SPACES', 'ACOUSTIC OPTIONS'],
+    primaryCta: { label: 'Explore Office Partitions →', href: '/solutions/glass' },
+    secondaryCta: { label: 'Start a Project', href: '/start-a-project' },
+    whatsappMsg: 'Hello Tiwari Enterprises, I would like to inquire about acoustic glass partitions in Pune.',
   },
 ];
 ---
 
-<!-- Architectural Full-Bleed Hero Section (Pure Visual Canvas — Zero Slop, Zero Frosted Glass) -->
+<!-- Architectural Full-Bleed Hero Canvas (WCAG 2.2 AA Compliant, Cinematic Slider) -->
 <section
-  class="relative min-h-[100vh] w-full flex flex-col justify-between overflow-hidden bg-black select-none"
+  class="relative min-h-[100vh] w-full flex flex-col justify-between overflow-hidden bg-charcoal select-none"
   id="hero-canvas"
+  role="region"
   aria-roledescription="carousel"
-  aria-label="Tiwari Enterprises Architectural Systems"
+  aria-label="Tiwari Enterprises Architectural Showcase"
 >
-  <!-- Background Full-Bleed Images (Stored locally in WebP, Crisp & Architectural) -->
-  <div class="absolute inset-0 z-0">
+  <!-- Screen Reader Live Announcer for Manual Navigation Only -->
+  <div class="sr-only" aria-live="polite" aria-atomic="true" id="hero-sr-announcer">
+    Slide 1 of 4: Spaces Crafted to Perfection. Premium aluminium sliding systems.
+  </div>
+
+  <!-- Background Image Carousel Stack (WebP, Hardware-Accelerated, Zero CLS) -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     {heroSlides.map((slide, index) => (
       <div
-        class={`hero-slide-item absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+        class={`hero-slide-item absolute inset-0 transition-opacity duration-800 ease-in-out ${
           index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
         }`}
         data-slide-index={index}
+        aria-hidden={index === 0 ? 'false' : 'true'}
       >
         <img
           src={slide.image}
           alt={slide.alt}
-          class="w-full h-full object-cover object-center filter contrast-[1.08] brightness-[0.80]"
+          class={`hero-slide-img w-full h-full object-cover object-center filter contrast-[1.08] brightness-[0.78] transition-transform duration-[7500ms] ease-out will-change-transform ${
+            index === 0 ? 'scale-105' : 'scale-100'
+          }`}
           loading={index === 0 ? 'eager' : 'lazy'}
+          fetchpriority={index === 0 ? 'high' : 'auto'}
           decoding="async"
         />
       </div>
     ))}
 
-    <!-- Architectural Optical Gradients (Ensures Crisp Contrast for Text Without Milkish Haze) -->
-    <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/30 to-black/45 pointer-events-none"></div>
-    <div class="absolute inset-y-0 left-0 w-full lg:w-3/4 z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+    <!-- Deep Architectural Optical Gradients (Ensures 7:1 Contrast While Preserving Photography Radiance) -->
+    <div class="absolute inset-0 z-10 bg-gradient-to-t from-charcoal via-charcoal/35 to-charcoal/50 pointer-events-none"></div>
+    <div class="absolute inset-y-0 left-0 w-full lg:w-4/5 z-10 bg-gradient-to-r from-charcoal/90 via-charcoal/45 to-transparent pointer-events-none"></div>
   </div>
 
-  <!-- Main Architectural Masthead Directly on the Image (Guaranteed Safe Clearance below Fixed Nav) -->
+  <!-- Main Architectural Masthead (Generous 112px+ Navbar Clearance) -->
   <div class="relative z-20 max-w-site mx-auto px-5 sm:px-8 w-full pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 my-auto">
-    <div class="max-w-4xl flex flex-col items-start gap-4 sm:gap-5 text-white">
+    <div class="max-w-4xl flex flex-col items-start gap-4 sm:gap-5 text-offWhite" id="hero-text-block">
+      
+      <!-- Permanent Semantic H1: Stable, Singular, Architecturally Integrated -->
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-metallicGold shrink-0" aria-hidden="true"></span>
+        <h1 class="font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/80 font-medium">
+          Premium Aluminium &amp; Glass Solutions in Pune
+        </h1>
+      </div>
+
       <!-- Live Category Eyebrow -->
       <div class="flex items-center gap-3">
-        <span class="w-8 h-[2px] bg-gold shrink-0"></span>
+        <span class="w-7 h-[2px] bg-metallicGold shrink-0" aria-hidden="true"></span>
         <span
-          class="font-body text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold text-gold transition-opacity duration-300"
+          class="font-body text-xs sm:text-sm uppercase tracking-[0.22em] font-bold text-metallicGold transition-opacity duration-300"
           id="hero-category"
         >
           {heroSlides[0].category}
         </span>
       </div>
 
-      <!-- Live Bold Architectural Headline -->
-      <h1
-        class="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-tight font-bold text-white leading-[0.98] drop-shadow-md transition-opacity duration-300"
+      <!-- Live Slide Heading (Semantically H2 for All Slides per SEO Spec) -->
+      <h2
+        class="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase tracking-tight font-bold text-white leading-[0.98] drop-shadow-md transition-all duration-300"
         id="hero-headline"
       >
         {heroSlides[0].headline}
-      </h1>
+      </h2>
 
       <!-- Live Description -->
       <p
-        class="font-body text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl font-light drop-shadow-sm transition-opacity duration-300"
+        class="font-body text-base sm:text-lg lg:text-xl text-offWhite/90 leading-relaxed max-w-2xl font-light drop-shadow-sm transition-opacity duration-300"
         id="hero-description"
       >
         {heroSlides[0].description}
       </p>
 
-      <!-- High-Visibility Live Technical Tags (Crisp, High Contrast, Updating on Slide Change) -->
-      <div class="flex flex-wrap items-center gap-2 pt-1 pb-2 transition-opacity duration-300" id="hero-tags-container">
-        {heroSlides[0].tags.map(tag => (
-          <span class="hero-tag-badge px-3 py-1 bg-black/75 border border-white/30 text-white font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium">
+      <!-- Semantic List of Technical Specification Tags -->
+      <ul
+        class="flex flex-wrap items-center gap-2 pt-1 pb-1 transition-opacity duration-300"
+        id="hero-tags-list"
+        aria-label="System key specifications"
+      >
+        {heroSlides[0].tags.map((tag) => (
+          <li class="px-3 py-1 bg-charcoal/85 border border-white/20 text-offWhite font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium shadow-2xs">
             {tag}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
 
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center gap-4 pt-1">
+      <!-- Action Buttons (High Contrast, Accessible Focus States) -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
         <a
-          href={heroSlides[0].ctaLink}
-          id="hero-cta-btn"
-          class="px-7 py-3.5 bg-gold hover:bg-gold-light active:bg-gold-dark text-black text-xs sm:text-sm uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2"
+          href={heroSlides[0].primaryCta.href}
+          id="hero-primary-cta"
+          class="px-7 py-3.5 bg-metallicGold hover:bg-lightGold active:bg-[#937848] text-charcoal text-xs sm:text-sm uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-white"
         >
-          <span id="hero-cta-label">{heroSlides[0].ctaText}</span>
-          <span>→</span>
+          <span id="hero-cta-label">{heroSlides[0].primaryCta.label}</span>
         </a>
+        
         <a
-          href="/start-a-project"
-          class="px-7 py-3.5 bg-black/40 hover:bg-white hover:text-black border border-white/60 text-white text-xs sm:text-sm uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer"
+          href={heroSlides[0].secondaryCta.href}
+          class="px-7 py-3.5 bg-charcoal/60 hover:bg-white hover:text-charcoal border border-white/40 text-white text-xs sm:text-sm uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold"
         >
-          Start a Project
+          {heroSlides[0].secondaryCta.label}
         </a>
+
         <a
-          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Tiwari%20Enterprises,%20I%20would%20like%20to%20discuss%20an%20architectural%20aluminium%20and%20glass%20project.`}
+          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(heroSlides[0].whatsappMsg)}`}
+          id="hero-whatsapp-cta"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs uppercase tracking-wider text-white/80 hover:text-gold font-medium pl-2 inline-flex items-center gap-1.5 transition-colors"
+          class="text-xs uppercase tracking-wider text-offWhite/80 hover:text-metallicGold font-medium pl-1 inline-flex items-center gap-1.5 transition-colors focus-visible:outline-2 focus-visible:outline-metallicGold py-2"
+          aria-label="Chat directly on WhatsApp about architectural projects in Pune"
         >
           <span>WhatsApp Chat →</span>
         </a>
@@ -151,48 +181,71 @@ const heroSlides = [
     </div>
   </div>
 
-  <!-- Bottom Architectural Metadata & Slide Tracker Bar (Solid Dark, High Contrast) -->
-  <div class="relative z-20 border-t border-white/15 bg-black/90 py-4 sm:py-5">
+  <!-- Bottom Architectural Metadata & Slider Controller Bar -->
+  <div class="relative z-20 border-t border-white/15 bg-charcoal/90 py-4 sm:py-5 backdrop-blur-none">
     <div class="max-w-site mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4 text-white text-xs">
-      <!-- Active System Name -->
+      
+      <!-- Slide Counter and System Discipline Identifier -->
       <div class="flex items-center gap-3 font-mono">
-        <span class="text-gold font-bold text-sm" id="hero-slide-num">01</span>
+        <span class="text-metallicGold font-bold text-sm tracking-wider" id="hero-slide-num">01</span>
         <span class="text-white/40">/</span>
         <span class="text-white/60">04</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
-        <span class="text-white font-semibold uppercase tracking-wider text-xs sm:text-sm transition-opacity duration-300" id="hero-system-name">
-          {heroSlides[0].system}
+        <span class="w-1.5 h-1.5 rounded-full bg-metallicGold shrink-0" aria-hidden="true"></span>
+        <span class="text-white/90 font-medium uppercase tracking-wider text-xs sm:text-sm transition-opacity duration-300" id="hero-system-name">
+          {heroSlides[0].category}
         </span>
       </div>
 
-      <!-- Slide Navigation Controls -->
-      <div class="flex items-center justify-between sm:justify-end gap-6">
-        <!-- Progress Bars -->
-        <div class="flex items-center gap-2" id="hero-progress-bars">
-          {heroSlides.map((_, i) => (
+      <!-- Controls: Progress Bars, Play/Pause Toggle, Previous/Next Navigation -->
+      <div class="flex items-center justify-between sm:justify-end gap-5">
+        
+        <!-- 4 Individual Progress Indicators -->
+        <div class="flex items-center gap-2" role="tablist" aria-label="Slide selectors">
+          {heroSlides.map((slide, i) => (
             <button
-              class={`progress-bar-btn h-[2px] transition-all duration-300 cursor-pointer ${
-                i === 0 ? 'w-10 bg-gold' : 'w-4 bg-white/30 hover:bg-white/70'
+              class={`progress-bar-btn relative h-1.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold ${
+                i === 0 ? 'w-10 bg-metallicGold' : 'w-4 bg-white/25 hover:bg-white/60'
               }`}
               data-target={i}
-              aria-label={`Switch to slide ${i + 1}`}
-            ></button>
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-label={`Go to slide ${i + 1}: ${slide.headline}`}
+            >
+              <span class="sr-only">Slide {i + 1}</span>
+            </button>
           ))}
         </div>
 
-        <!-- Directional Controls -->
-        <div class="flex items-center gap-2 font-mono">
+        <!-- Play / Pause Controller Button -->
+        <button
+          id="hero-play-pause-btn"
+          class="p-1.5 border border-white/20 hover:border-metallicGold hover:text-metallicGold text-white/80 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold flex items-center justify-center"
+          aria-label="Pause slideshow"
+          title="Pause slideshow"
+        >
+          <!-- Pause Icon (Default when autoplaying) -->
+          <svg id="hero-pause-icon" class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+          <!-- Play Icon (Hidden when playing) -->
+          <svg id="hero-play-icon" class="w-3.5 h-3.5 fill-current hidden" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+
+        <!-- Directional Navigation Buttons -->
+        <div class="flex items-center gap-2 font-mono" role="group" aria-label="Slider navigation">
           <button
             id="hero-prev-btn"
-            class="px-3 py-1 border border-white/25 hover:border-gold hover:text-gold text-white text-xs transition-colors cursor-pointer"
-            aria-label="Previous Slide"
+            class="px-3 py-1 border border-white/25 hover:border-metallicGold hover:text-metallicGold text-white text-xs transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold"
+            aria-label="Previous slide"
           >
             PREV
           </button>
           <button
             id="hero-next-btn"
-            class="px-3 py-1 border border-white/25 hover:border-gold hover:text-gold text-white text-xs transition-colors cursor-pointer"
-            aria-label="Next Slide"
+            class="px-3 py-1 border border-white/25 hover:border-metallicGold hover:text-metallicGold text-white text-xs transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold"
+            aria-label="Next slide"
           >
             NEXT
           </button>
@@ -202,105 +255,181 @@ const heroSlides = [
   </div>
 </section>
 
-<!-- Pure Architectural Synchronization Script -->
-<script define:vars={{ heroSlides }}>
+<!-- Production-Grade Architectural Slider Script -->
+<script define:vars={{ heroSlides, whatsappNumber: SITE_CONFIG.whatsapp }}>
+  const AUTOPLAY_INTERVAL = 7000;
+  const TRANSITION_DURATION = 800;
+
   let activeIndex = 0;
+  let isPlaying = true;
+  let isTransitioning = false;
+  let autoSlideTimer = null;
+  let textTimeout = null;
+
+  const canvas = document.getElementById('hero-canvas');
   const slideItems = document.querySelectorAll('.hero-slide-item');
   const progressBars = document.querySelectorAll('.progress-bar-btn');
+  const announcer = document.getElementById('hero-sr-announcer');
 
-  // Text Elements directly on the canvas
+  // Text Elements
+  const textBlock = document.getElementById('hero-text-block');
   const categoryEl = document.getElementById('hero-category');
   const headlineEl = document.getElementById('hero-headline');
   const descriptionEl = document.getElementById('hero-description');
-  const tagsContainer = document.getElementById('hero-tags-container');
-  const ctaBtn = document.getElementById('hero-cta-btn');
+  const tagsList = document.getElementById('hero-tags-list');
+  const primaryCta = document.getElementById('hero-primary-cta');
   const ctaLabel = document.getElementById('hero-cta-label');
+  const whatsappCta = document.getElementById('hero-whatsapp-cta');
 
-  // Bottom Metadata Elements
+  // Bottom Metadata
   const slideNumEl = document.getElementById('hero-slide-num');
   const systemNameEl = document.getElementById('hero-system-name');
 
+  // Control Buttons
   const prevBtn = document.getElementById('hero-prev-btn');
   const nextBtn = document.getElementById('hero-next-btn');
-  const canvas = document.getElementById('hero-canvas');
+  const playPauseBtn = document.getElementById('hero-play-pause-btn');
+  const playIcon = document.getElementById('hero-play-icon');
+  const pauseIcon = document.getElementById('hero-pause-icon');
 
-  let autoSlideTimer = null;
-  let textSwitchTimeout = null;
+  // Reduced Motion Preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    isPlaying = false;
+  }
 
-  function switchSlide(targetIndex) {
-    if (targetIndex === activeIndex) return;
-    if (textSwitchTimeout) clearTimeout(textSwitchTimeout);
+  function updatePlayPauseUI() {
+    if (!playPauseBtn || !playIcon || !pauseIcon) return;
+    if (isPlaying) {
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+      playPauseBtn.setAttribute('aria-label', 'Pause slideshow');
+      playPauseBtn.setAttribute('title', 'Pause slideshow');
+    } else {
+      pauseIcon.classList.add('hidden');
+      playIcon.classList.remove('hidden');
+      playPauseBtn.setAttribute('aria-label', 'Play slideshow');
+      playPauseBtn.setAttribute('title', 'Play slideshow');
+    }
+  }
 
-    // Fade out previous slide
-    slideItems[activeIndex]?.classList.remove('opacity-100', 'z-10');
-    slideItems[activeIndex]?.classList.add('opacity-0', 'z-0');
-    progressBars[activeIndex]?.classList.remove('w-10', 'bg-gold');
-    progressBars[activeIndex]?.classList.add('w-4', 'bg-white/30');
+  function announceSlide(index) {
+    if (!announcer) return;
+    const slide = heroSlides[index];
+    announcer.textContent = `Slide ${index + 1} of ${heroSlides.length}: ${slide.headline}. ${slide.category}.`;
+  }
 
-    // Subtle fade out text and tags
-    if (headlineEl) headlineEl.style.opacity = '0.25';
-    if (descriptionEl) descriptionEl.style.opacity = '0.25';
-    if (categoryEl) categoryEl.style.opacity = '0.25';
-    if (tagsContainer) tagsContainer.style.opacity = '0.25';
-    if (systemNameEl) systemNameEl.style.opacity = '0.25';
+  function switchSlide(targetIndex, isManual = false) {
+    if (targetIndex === activeIndex || isTransitioning) return;
+    isTransitioning = true;
 
+    if (textTimeout) {
+      clearTimeout(textTimeout);
+      textTimeout = null;
+    }
+
+    const prevIndex = activeIndex;
     activeIndex = (targetIndex + heroSlides.length) % heroSlides.length;
     const current = heroSlides[activeIndex];
 
-    // Fade in new slide
-    slideItems[activeIndex]?.classList.remove('opacity-0', 'z-0');
-    slideItems[activeIndex]?.classList.add('opacity-100', 'z-10');
-    progressBars[activeIndex]?.classList.remove('w-4', 'bg-white/30');
-    progressBars[activeIndex]?.classList.add('w-10', 'bg-gold');
+    // Fade out previous slide image & reset zoom
+    const prevSlideEl = slideItems[prevIndex];
+    if (prevSlideEl) {
+      prevSlideEl.classList.remove('opacity-100', 'z-10');
+      prevSlideEl.classList.add('opacity-0', 'z-0');
+      prevSlideEl.setAttribute('aria-hidden', 'true');
+      const prevImg = prevSlideEl.querySelector('.hero-slide-img');
+      if (prevImg) prevImg.classList.remove('scale-105');
+      if (prevImg) prevImg.classList.add('scale-100');
+    }
 
-    // Update text and tag content smoothly
-    setTimeout(() => {
-      if (categoryEl) {
-        categoryEl.textContent = current.category;
-        categoryEl.style.opacity = '1';
+    // Update progress bars
+    progressBars.forEach((bar, i) => {
+      if (i === activeIndex) {
+        bar.classList.remove('w-4', 'bg-white/25');
+        bar.classList.add('w-10', 'bg-metallicGold');
+        bar.setAttribute('aria-selected', 'true');
+      } else {
+        bar.classList.remove('w-10', 'bg-metallicGold');
+        bar.classList.add('w-4', 'bg-white/25');
+        bar.setAttribute('aria-selected', 'false');
       }
-      if (headlineEl) {
-        headlineEl.textContent = current.headline;
-        headlineEl.style.opacity = '1';
+    });
+
+    // Fade in target slide image & start subtle zoom
+    const nextSlideEl = slideItems[activeIndex];
+    if (nextSlideEl) {
+      nextSlideEl.classList.remove('opacity-0', 'z-0');
+      nextSlideEl.classList.add('opacity-100', 'z-10');
+      nextSlideEl.setAttribute('aria-hidden', 'false');
+      const nextImg = nextSlideEl.querySelector('.hero-slide-img');
+      if (nextImg && !prefersReducedMotion) {
+        nextImg.classList.remove('scale-100');
+        nextImg.classList.add('scale-105');
       }
-      if (descriptionEl) {
-        descriptionEl.textContent = current.description;
-        descriptionEl.style.opacity = '1';
-      }
-      if (tagsContainer && current.tags) {
-        tagsContainer.innerHTML = current.tags
+    }
+
+    // Subtle fade out text block
+    if (textBlock && !prefersReducedMotion) {
+      textBlock.style.opacity = '0.2';
+      textBlock.style.transform = 'translateY(6px)';
+    }
+
+    // Update text content with architectural precision
+    textTimeout = setTimeout(() => {
+      if (categoryEl) categoryEl.textContent = current.category;
+      if (headlineEl) headlineEl.textContent = current.headline;
+      if (descriptionEl) descriptionEl.textContent = current.description;
+
+      if (tagsList && current.tags) {
+        tagsList.innerHTML = current.tags
           .map(
             (tag) =>
-              `<span class="hero-tag-badge px-3 py-1 bg-black/75 border border-white/30 text-white font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium transition-opacity duration-200">${tag}</span>`
+              `<li class="px-3 py-1 bg-charcoal/85 border border-white/20 text-offWhite font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium shadow-2xs">${tag}</li>`
           )
           .join('');
-        tagsContainer.style.opacity = '1';
       }
-      if (ctaBtn) ctaBtn.setAttribute('href', current.ctaLink);
-      if (ctaLabel) ctaLabel.textContent = current.ctaText;
+
+      if (primaryCta) primaryCta.setAttribute('href', current.primaryCta.href);
+      if (ctaLabel) ctaLabel.textContent = current.primaryCta.label;
+      if (whatsappCta) {
+        whatsappCta.setAttribute(
+          'href',
+          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(current.whatsappMsg)}`
+        );
+      }
 
       if (slideNumEl) slideNumEl.textContent = current.indexStr;
-      if (systemNameEl) {
-        systemNameEl.textContent = current.system;
-        systemNameEl.style.opacity = '1';
+      if (systemNameEl) systemNameEl.textContent = current.category;
+
+      if (textBlock) {
+        textBlock.style.opacity = '1';
+        textBlock.style.transform = 'translateY(0)';
       }
-    }, 180);
+
+      if (isManual) {
+        announceSlide(activeIndex);
+      }
+    }, 200);
+
+    // Release transition lock after crossfade completes
+    setTimeout(() => {
+      isTransitioning = false;
+    }, TRANSITION_DURATION);
   }
 
-  function advance() {
-    switchSlide(activeIndex + 1);
+  function advance(isManual = false) {
+    switchSlide(activeIndex + 1, isManual);
   }
 
-  function retreat() {
-    switchSlide(activeIndex - 1);
+  function retreat(isManual = false) {
+    switchSlide(activeIndex - 1, isManual);
   }
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function startTimer() {
     stopTimer();
-    if (prefersReducedMotion) return;
-    autoSlideTimer = setInterval(advance, 5500);
+    if (!isPlaying || prefersReducedMotion) return;
+    autoSlideTimer = setInterval(() => advance(false), AUTOPLAY_INTERVAL);
   }
 
   function stopTimer() {
@@ -310,30 +439,112 @@ const heroSlides = [
     }
   }
 
+  function pauseAutoplay() {
+    isPlaying = false;
+    stopTimer();
+    updatePlayPauseUI();
+  }
+
+  function resumeAutoplay() {
+    if (prefersReducedMotion) return;
+    isPlaying = true;
+    startTimer();
+    updatePlayPauseUI();
+  }
+
+  function togglePlayPause() {
+    if (isPlaying) {
+      pauseAutoplay();
+    } else {
+      resumeAutoplay();
+    }
+  }
+
+  // Event Listeners: Navigation
   nextBtn?.addEventListener('click', () => {
-    advance();
+    advance(true);
     startTimer();
   });
 
   prevBtn?.addEventListener('click', () => {
-    retreat();
+    retreat(true);
     startTimer();
   });
+
+  playPauseBtn?.addEventListener('click', togglePlayPause);
 
   progressBars.forEach((bar) => {
     bar.addEventListener('click', () => {
       const idx = parseInt(bar.getAttribute('data-target') || '0', 10);
-      switchSlide(idx);
+      switchSlide(idx, true);
       startTimer();
     });
   });
 
-  canvas?.addEventListener('mouseenter', stopTimer);
-  canvas?.addEventListener('mouseleave', startTimer);
-  canvas?.addEventListener('focusin', stopTimer);
-  canvas?.addEventListener('focusout', (e: FocusEvent) => {
-    if (!canvas.contains(e.relatedTarget as Node | null)) startTimer();
+  // Mouse Hover Pausing
+  canvas?.addEventListener('mouseenter', () => {
+    stopTimer();
   });
 
-  startTimer();
+  canvas?.addEventListener('mouseleave', () => {
+    if (isPlaying) startTimer();
+  });
+
+  // Focus Handling for WCAG 2.2 AA
+  canvas?.addEventListener('focusin', () => {
+    stopTimer();
+  });
+
+  canvas?.addEventListener('focusout', (e) => {
+    if (!canvas.contains(e.relatedTarget) && isPlaying) {
+      startTimer();
+    }
+  });
+
+  // Keyboard Navigation: Left / Right Arrows
+  canvas?.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      advance(true);
+      startTimer();
+    } else if (e.key === 'ArrowLeft') {
+      retreat(true);
+      startTimer();
+    }
+  });
+
+  // Mobile Touch Swipe Navigation
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const SWIPE_THRESHOLD = 45;
+
+  canvas?.addEventListener(
+    'touchstart',
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
+
+  canvas?.addEventListener(
+    'touchend',
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > SWIPE_THRESHOLD) {
+        if (diff > 0) {
+          advance(true);
+        } else {
+          retreat(true);
+        }
+        startTimer();
+      }
+    },
+    { passive: true }
+  );
+
+  // Initialize
+  updatePlayPauseUI();
+  if (!prefersReducedMotion) {
+    startTimer();
+  }
 </script>
