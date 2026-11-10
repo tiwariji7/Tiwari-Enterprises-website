@@ -1,0 +1,123 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SectionIntro from '../../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import Button from '../../components/ui/Button.astro';
+import { SOLUTIONS } from '../../data/solutions';
+
+const seo = {
+  title: 'Architectural Aluminium & Glass Solutions in Pune',
+  description: 'Precision architectural aluminium sliding doors, thermal windows, toughened glass railings, partitions, and structural facades in Pune by Tiwari Enterprises.',
+};
+
+const breadcrumbs = [{ name: 'Solutions', url: '/solutions' }];
+const primarySolutions = [SOLUTIONS['aluminium'], SOLUTIONS['glass']];
+const secondarySolutions = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS['interiors']];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/solutions">
+  <div class="py-12 sm:py-20 bg-paper">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} className="mb-8" />
+
+      <div class="max-w-3xl mb-16 sm:mb-24">
+        <SectionIntro
+          eyebrow="CAPABILITIES &amp; SYSTEMS"
+          heading="Architectural Solutions"
+          lead="Engineered for modern residences, penthouses, and commercial spaces across Pune. We prioritize quality extrusions, certified safety glass, and enduring European hardware."
+        />
+      </div>
+
+      <!-- Primary Disciplines Section -->
+      <div class="mb-24 space-y-16">
+        <div class="border-b border-borderMuted pb-4">
+          <span class="font-display text-sm uppercase tracking-architectural text-ink font-bold">
+            Primary Focus Areas (Dedicated Sub-URLs)
+          </span>
+        </div>
+
+        {primarySolutions.map((sol) => (
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface border border-borderMuted p-8 sm:p-12 shadow-xs">
+            <div class="lg:col-span-6 relative aspect-[16/10] overflow-hidden border border-borderMuted bg-surface-muted">
+              <img
+                src={sol.image}
+                alt={sol.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="lg:col-span-6 flex flex-col justify-between gap-6">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-gold font-bold">Primary Discipline</span>
+                <h2 class="font-display text-3xl sm:text-4xl uppercase font-bold text-ink mt-1">
+                  {sol.title}
+                </h2>
+                <p class="font-body text-sm sm:text-base text-ink-muted leading-relaxed mt-3">
+                  {sol.heroDescription}
+                </p>
+              </div>
+
+              <!-- Key Applications List -->
+              <div class="space-y-2">
+                <span class="text-xs uppercase tracking-wider text-ink-muted font-body font-semibold block">Key Applications:</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-body text-ink/80">
+                  {sol.applications.slice(0, 4).map((app) => (
+                    <div class="flex items-center gap-2">
+                      <span class="text-gold font-bold">▪</span>
+                      <span>{app.title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-borderMuted flex flex-wrap items-center gap-4">
+                <Button href={`/solutions/${sol.slug}`} variant="primary" size="md">
+                  Explore {sol.slug.toUpperCase()} Sub-URL →
+                </Button>
+                <Button href={`/start-a-project?service=${sol.slug}`} variant="secondary" size="md">
+                  Request Quotation
+                </Button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Secondary Services Section -->
+      <div class="pt-8 border-t border-borderMuted">
+        <div class="mb-10">
+          <span class="font-display text-sm uppercase tracking-architectural text-ink font-bold block">
+            Supporting Architectural Works (Dedicated Sub-URLs)
+          </span>
+          <p class="font-body text-sm text-ink-muted mt-1">
+            Complementary steel, ceiling, and interior capabilities that ensure seamless on-site coordination with our aluminium and glass systems.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {secondarySolutions.map((sol) => (
+            <div class="p-8 bg-surface border border-borderMuted flex flex-col justify-between group hover:border-gold transition-colors shadow-2xs">
+              <div>
+                <span class="text-[10px] font-mono uppercase text-ink-muted tracking-wider font-semibold">Supporting Sub-URL</span>
+                <h3 class="font-display text-2xl uppercase font-bold text-ink group-hover:text-gold transition-colors mt-1">
+                  {sol.title}
+                </h3>
+                <p class="font-body text-xs sm:text-sm text-ink-muted leading-relaxed mt-3">
+                  {sol.shortDescription}
+                </p>
+              </div>
+
+              <div class="pt-6 border-t border-borderMuted mt-6">
+                <a href={`/solutions/${sol.slug}`} class="text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold inline-flex items-center gap-1">
+                  <span>View Sub-Page Specifications</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

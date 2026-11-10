@@ -1,0 +1,50 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'whatsapp';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
+  id?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  type = 'button',
+  target,
+  rel,
+  id,
+} = Astro.props;
+
+const baseStyles = 'inline-flex items-center justify-center font-body font-medium transition-all duration-200 select-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+
+const sizeStyles = {
+  sm: 'text-xs tracking-wider uppercase px-4 py-2.5 gap-2',
+  md: 'text-sm tracking-wider uppercase px-6 py-3.5 gap-2.5',
+  lg: 'text-base tracking-wider uppercase px-8 py-4 gap-3',
+}[size];
+
+const variantStyles = {
+  primary: 'bg-ink text-white font-semibold hover:bg-gold hover:text-white active:bg-gold-dark shadow-sm',
+  secondary: 'bg-surface text-ink border border-borderMuted hover:border-gold hover:text-gold shadow-xs',
+  ghost: 'text-ink hover:text-gold p-0 tracking-widest',
+  whatsapp: 'bg-[#128C7E] text-white font-medium hover:bg-[#075E54] shadow-sm',
+}[variant];
+
+const combinedClasses = `${baseStyles} ${sizeStyles} ${variantStyles} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={combinedClasses} target={target} rel={rel} id={id}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={combinedClasses} id={id}>
+    <slot />
+  </button>
+)}

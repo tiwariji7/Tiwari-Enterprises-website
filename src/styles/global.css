@@ -1,0 +1,107 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: var(--color-bg-base);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    scroll-behavior: auto; /* Handled smoothly by Lenis */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--color-bg-base);
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: #FFFFFF;
+  }
+
+  /* Architectural thin focus outline */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+/* Lenis Recommended Smooth Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Fine architectural grid and borders */
+.border-architectural {
+  border-color: var(--color-border);
+}
+
+.border-architectural-gold {
+  border-color: rgba(179, 142, 70, 0.4);
+}
+
+.surface-light {
+  background-color: #FFFFFF;
+}
+
+.surface-subtle {
+  background-color: var(--color-surface-subtle);
+}
+
+.surface-dark {
+  background-color: var(--color-ink);
+  color: #FAFAF8;
+}
+
+/* Typography precision */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Luxury hairline subtle grid overlay (architectural blueprint hint for light mode) */
+.architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(17, 24, 34, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 24, 34, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

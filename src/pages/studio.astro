@@ -1,0 +1,116 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import Button from '../components/ui/Button.astro';
+import { SITE_CONFIG } from '../utils/seo';
+
+const seo = {
+  title: 'About the Studio — Tiwari Enterprises Pune',
+  description: 'Tiwari Enterprises is an architectural aluminium and structural glass specialist based in Pune, focused on craftsmanship, material honesty, and precision execution.',
+};
+
+const breadcrumbs = [{ name: 'Studio', url: '/studio' }];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/studio">
+  <div class="py-12 sm:py-20 bg-paper">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} className="mb-8" />
+
+      <div class="max-w-4xl mb-16 sm:mb-20">
+        <SectionIntro
+          eyebrow="ABOUT TIWARI ENTERPRISES · SUB-URL: /studio"
+          heading="Craftsmanship, Material Honesty &amp; Structural Precision"
+          lead="We built Tiwari Enterprises to bridge the gap between ambitious architectural drawings and actual on-site fabrication quality."
+        />
+      </div>
+
+      <!-- Main Studio Narrative Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-20 border-b border-borderMuted">
+        <div class="lg:col-span-7 flex flex-col gap-6 text-ink-muted font-body text-base sm:text-lg leading-relaxed">
+          <p>
+            Too often in the building industry, architectural glazing and aluminium fabrication are treated as commoditized contractor chores — resulting in rattling windows, monsoon leaks, misaligned sightlines, and substituted inferior alloys.
+          </p>
+          <p>
+            At <strong class="text-ink">Tiwari Enterprises</strong>, we operate with an architectural mindset. We specialize in two primary disciplines: <strong class="text-ink">Architectural Aluminium Systems</strong> and <strong class="text-ink">Structural Glass Works</strong>, complemented by secondary structural steel framing and integrated ceiling details.
+          </p>
+          <p class="text-sm sm:text-base text-ink/80">
+            We partner with discerning homeowners, architects, interior designers, and commercial property owners across Pune to deliver spaces that look effortlessly refined and perform reliably across decades.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-surface border border-borderMuted p-8 sm:p-10 flex flex-col justify-between shadow-xs">
+          <div class="space-y-6">
+            <span class="font-display text-xs uppercase tracking-architectural text-gold font-bold block">
+              Core Studio Commitments
+            </span>
+            <div class="space-y-4 font-body text-sm text-ink-muted">
+              <div class="pb-3 border-b border-borderMuted">
+                <strong class="text-ink block mb-0.5">Material Authenticity</strong>
+                <span>Virgin 6063-T6 architectural alloys and BIS-certified safety glass only.</span>
+              </div>
+              <div class="pb-3 border-b border-borderMuted">
+                <strong class="text-ink block mb-0.5">Laser-Guided Precision</strong>
+                <span>Digital laser surveys of all structural openings prior to cutting.</span>
+              </div>
+              <div>
+                <strong class="text-ink block mb-0.5">Transparent Scope</strong>
+                <span>Itemised quotations with zero ambiguous lump-sums or surprise extras.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 border-t border-borderMuted mt-8 text-xs font-mono text-ink-muted font-semibold">
+            BASED IN PUNE · SERVING WESTERN MAHARASHTRA
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Geography / Pune Neighborhoods -->
+      <div class="py-16 border-b border-borderMuted">
+        <div class="max-w-3xl mb-10">
+          <h2 class="font-display text-3xl uppercase font-bold text-ink mb-2">
+            Service Coverage in Pune &amp; Nearby Regions
+          </h2>
+          <p class="font-body text-sm sm:text-base text-ink-muted leading-relaxed">
+            We operate throughout the greater Pune metropolitan area, providing on-site consultations, laser measurements, and coordinated installations in:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-body text-xs sm:text-sm text-ink/80">
+          {SITE_CONFIG.serviceAreas.map((area) => (
+            <div class="p-4 bg-surface border border-borderMuted flex items-center gap-2 shadow-2xs font-medium">
+              <span class="text-gold font-bold">▪</span>
+              <span>{area}</span>
+            </div>
+          ))}
+          <div class="p-4 bg-surface border border-borderMuted flex items-center gap-2 shadow-2xs font-medium">
+            <span class="text-gold font-bold">▪</span>
+            <span>Surrounding Pune Districts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Studio CTA -->
+      <div class="pt-16 flex flex-col sm:flex-row items-center justify-between gap-8">
+        <div>
+          <h3 class="font-display text-2xl sm:text-3xl uppercase font-bold text-ink">
+            Have an architectural drawing to review?
+          </h3>
+          <p class="font-body text-xs sm:text-sm text-ink-muted mt-1">
+            Let's discuss how our aluminium and glass systems fit your floor plan.
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <Button href="/start-a-project" variant="primary" size="md">
+            Start a Project Sub-URL
+          </Button>
+          <Button href="/work" variant="secondary" size="md">
+            View Portfolio
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

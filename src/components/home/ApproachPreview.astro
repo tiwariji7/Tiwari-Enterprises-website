@@ -1,0 +1,44 @@
+---
+import SectionIntro from '../ui/SectionIntro.astro';
+import Button from '../ui/Button.astro';
+
+const steps = [
+  { num: '01', title: 'Consultation', desc: 'Understanding your drawings, performance requirements, and design vision.' },
+  { num: '02', title: 'Site Assessment', desc: 'Laser survey of structural openings, wind exposure, and threshold conditions in Pune.' },
+  { num: '03', title: 'Quotation & Scope', desc: 'Itemised material specifications, profile grades, glass thickness, and transparent pricing.' },
+  { num: '04', title: 'Fabrication & Install', desc: 'Factory mitre cutting, assembly, and clean site installation by experienced specialists.' },
+  { num: '05', title: 'Review & Handover', desc: 'Rigorous alignment checks, smooth operation tests, water sealing inspection, and handover.' },
+];
+---
+
+<section class="py-24 sm:py-32 bg-surface-subtle border-b border-borderMuted relative">
+  <div class="max-w-site mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+      <SectionIntro
+        eyebrow="OUR METHODOLOGY"
+        heading="Predictable, Step-by-Step Execution"
+        lead="How we eliminate guesswork, delay, and quality compromises from initial enquiry to final sign-off."
+      />
+      <Button href="/approach" variant="secondary" size="md">
+        Explore Full Process Sub-Page
+      </Button>
+    </div>
+
+    <!-- Stepped Process Track -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 border-t border-borderMuted pt-10">
+      {steps.map((step) => (
+        <div class="flex flex-col gap-3 group p-4 bg-surface border border-borderMuted shadow-2xs">
+          <span class="font-display text-4xl sm:text-5xl font-bold text-gold/70 group-hover:text-gold transition-colors font-mono">
+            {step.num}
+          </span>
+          <h4 class="font-display text-xl uppercase font-bold text-ink mt-1">
+            {step.title}
+          </h4>
+          <p class="font-body text-xs sm:text-sm text-ink-muted leading-relaxed">
+            {step.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

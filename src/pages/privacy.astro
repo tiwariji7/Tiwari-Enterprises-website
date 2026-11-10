@@ -1,0 +1,69 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import { SITE_CONFIG } from '../utils/seo';
+
+const seo = {
+  title: 'Privacy Policy — Tiwari Enterprises',
+  description: 'Our commitment to protecting your personal information and project data at Tiwari Enterprises.',
+};
+
+const breadcrumbs = [{ name: 'Privacy Policy', url: '/privacy' }];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/privacy">
+  <div class="py-12 sm:py-20 bg-paper">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} className="mb-8" />
+
+      <div class="max-w-3xl mb-12">
+        <SectionIntro
+          eyebrow="LEGAL &amp; TRANSPARENCY · SUB-URL: /privacy"
+          heading="Privacy Policy"
+          lead="We treat your privacy with the same discipline we bring to our architectural fabrication."
+        />
+      </div>
+
+      <div class="max-w-3xl bg-surface border border-borderMuted p-8 sm:p-12 shadow-xs font-body text-sm text-ink-muted leading-relaxed space-y-8">
+        <section class="space-y-3">
+          <h2 class="font-display text-2xl uppercase font-bold text-ink">1. Information We Collect</h2>
+          <p>
+            When you submit a project enquiry on <strong class="text-ink">{SITE_CONFIG.name}</strong>, we collect personal information you explicitly provide: your full name, phone number, email address (if provided), project location, property type, and project specifications.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-display text-2xl uppercase font-bold text-ink">2. How We Use Your Information</h2>
+          <p>
+            The information you share is used solely to evaluate your project requirements, prepare accurate material quotations, schedule site measurements, and communicate regarding your architectural commission. We do not sell, rent, or trade your contact details with any third parties or marketing brokers.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-display text-2xl uppercase font-bold text-ink">3. Communications &amp; WhatsApp</h2>
+          <p>
+            By submitting an enquiry and checking the consent box, you grant us permission to contact you via telephone call or WhatsApp to discuss your project. You may opt out of future communications at any time by notifying us directly.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-display text-2xl uppercase font-bold text-ink">4. Data Security &amp; Storage</h2>
+          <p>
+            We implement industry-standard safeguards to prevent unauthorized access or disclosure of your information. Your project drawings and site data are accessible only by our direct technical and execution supervisors.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-display text-2xl uppercase font-bold text-ink">5. Contact Information</h2>
+          <p>
+            If you have questions about our privacy practices, please contact us at: <br />
+            <strong class="text-ink">{SITE_CONFIG.name}</strong> <br />
+            Pune, Maharashtra, India <br />
+            Email: <a href={`mailto:${SITE_CONFIG.email}`} class="text-gold hover:underline font-medium">{SITE_CONFIG.email}</a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

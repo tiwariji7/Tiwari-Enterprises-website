@@ -1,0 +1,135 @@
+---
+import SectionIntro from '../ui/SectionIntro.astro';
+import { SOLUTIONS } from '../../data/solutions';
+
+const aluminium = SOLUTIONS['aluminium'];
+const glass = SOLUTIONS['glass'];
+const secondaryDisciplines = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS['interiors']];
+---
+
+<section class="py-24 sm:py-32 bg-paper relative border-b border-borderMuted">
+  <div class="max-w-site mx-auto px-5 sm:px-8">
+    <SectionIntro
+      eyebrow="PRIMARY CAPABILITIES"
+      heading="Core Architectural Disciplines"
+      lead="We prioritise two foundational disciplines: precision aluminium systems and architectural glass installations, supported by select structural and interior works."
+      className="mb-14 sm:mb-20"
+    />
+
+    <!-- Two Primary Feature Panels (Dominant Visual Scale) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-16">
+      <!-- Aluminium Panel -->
+      <div class="group relative bg-surface border border-borderMuted overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-gold shadow-xs">
+        <div class="relative h-72 sm:h-96 overflow-hidden">
+          <img
+            src={aluminium.image}
+            alt="Architectural aluminium sliding windows and structural frames"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute top-6 left-6">
+            <span class="px-3.5 py-1.5 bg-white border border-borderMuted text-ink font-body text-xs uppercase tracking-wider font-bold shadow-xs">
+              Primary Discipline
+            </span>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-10 flex flex-col gap-5 flex-grow justify-between">
+          <div>
+            <h3 class="font-display text-3xl sm:text-4xl uppercase tracking-tight font-bold text-ink group-hover:text-gold transition-colors">
+              Aluminium Systems
+            </h3>
+            <p class="font-body text-sm sm:text-base text-ink-muted leading-relaxed mt-3">
+              {aluminium.shortDescription} Thermal-break frames, slimline profiles, and wind-load engineered sliding systems tailored for residential villas and commercial spaces.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-borderMuted flex items-center justify-between">
+            <span class="font-body text-xs text-ink-muted uppercase tracking-wider font-medium">
+              4 Core Applications
+            </span>
+            <a href="/solutions/aluminium" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold">
+              <span>Explore Aluminium Sub-Page</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glass Panel -->
+      <div class="group relative bg-surface border border-borderMuted overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-gold shadow-xs">
+        <div class="relative h-72 sm:h-96 overflow-hidden">
+          <img
+            src={glass.image}
+            alt="Architectural toughened glass partitions and frameless railings"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute top-6 left-6">
+            <span class="px-3.5 py-1.5 bg-white border border-borderMuted text-ink font-body text-xs uppercase tracking-wider font-bold shadow-xs">
+              Primary Discipline
+            </span>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-10 flex flex-col gap-5 flex-grow justify-between">
+          <div>
+            <h3 class="font-display text-3xl sm:text-4xl uppercase tracking-tight font-bold text-ink group-hover:text-gold transition-colors">
+              Architectural Glass
+            </h3>
+            <p class="font-body text-sm sm:text-base text-ink-muted leading-relaxed mt-3">
+              {glass.shortDescription} Toughened safety partitions, frameless balcony balustrades, custom shower cubicles, and acoustic office glazing.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-borderMuted flex items-center justify-between">
+            <span class="font-body text-xs text-ink-muted uppercase tracking-wider font-medium">
+              Safety & Acoustic Certified
+            </span>
+            <a href="/solutions/glass" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold">
+              <span>Explore Glass Sub-Page</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Capabilities (Smaller, Subordinate Row per PRD) -->
+    <div class="pt-8 border-t border-borderMuted">
+      <div class="mb-6 flex items-center justify-between">
+        <span class="font-display text-xs uppercase tracking-architectural text-ink-muted font-bold">
+          Supporting Specialized Services
+        </span>
+        <a href="/solutions" class="text-xs uppercase tracking-wider text-gold hover:underline font-bold">
+          View All Capabilities Overview →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {secondaryDisciplines.map((item) => (
+          <a
+            href={`/solutions/${item.slug}`}
+            class="p-6 bg-surface border border-borderMuted hover:border-gold transition-colors flex flex-col justify-between group shadow-2xs"
+          >
+            <div>
+              <span class="font-body text-[11px] uppercase tracking-wider text-ink-muted block mb-2 font-medium">
+                Secondary Service
+              </span>
+              <h4 class="font-display text-xl uppercase font-bold text-ink group-hover:text-gold transition-colors">
+                {item.title}
+              </h4>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                {item.shortDescription}
+              </p>
+            </div>
+            <span class="mt-4 text-xs text-gold group-hover:text-gold-dark font-bold inline-flex items-center gap-1.5">
+              <span>View Sub-Page</span>
+              <span>→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

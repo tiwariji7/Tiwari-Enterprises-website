@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+  variant?: 'gold' | 'muted' | 'ink';
+  className?: string;
+  showLine?: boolean;
+}
+
+const {
+  text,
+  variant = 'gold',
+  className = '',
+  showLine = true,
+} = Astro.props;
+
+const colorClasses = {
+  gold: 'text-gold',
+  muted: 'text-ink-muted',
+  ink: 'text-ink',
+}[variant];
+---
+
+<div class={`inline-flex items-center gap-3 ${className}`}>
+  {showLine && <span class="w-6 h-[1.5px] bg-gold shrink-0"></span>}
+  <span class={`font-body text-xs uppercase tracking-[0.22em] font-bold ${colorClasses}`}>
+    {text}
+  </span>
+</div>

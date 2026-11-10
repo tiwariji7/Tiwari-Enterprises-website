@@ -1,0 +1,79 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import ProjectEnquiryForm from '../components/forms/ProjectEnquiryForm.astro';
+import { SITE_CONFIG } from '../utils/seo';
+
+const seo = {
+  title: 'Start a Project — Architectural Quotation & Enquiry in Pune',
+  description: 'Discuss your architectural aluminium, glass, sliding systems, or railing project with Tiwari Enterprises. Request a site assessment and quotation in Pune.',
+};
+
+const breadcrumbs = [{ name: 'Start a Project', url: '/start-a-project' }];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/start-a-project">
+  <div class="py-12 sm:py-20 bg-paper">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} className="mb-8" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- Left: Briefing & Reassurance (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <SectionIntro
+            eyebrow="PROJECT ENQUIRY · SUB-URL: /start-a-project"
+            heading="Let's Discuss Your Space"
+            lead="Share details about your architectural requirements, opening dimensions, or location in Pune. We will review your brief and contact you within 24 business hours."
+          />
+
+          <div class="p-6 bg-surface border border-borderMuted space-y-4 shadow-xs">
+            <span class="font-display text-sm uppercase tracking-architectural text-gold font-bold block">
+              Helpful Details to Share
+            </span>
+            <ul class="space-y-2.5 font-body text-xs text-ink-muted">
+              <li class="flex items-start gap-2">
+                <span class="text-gold font-bold">▪</span>
+                <span>Type of property (e.g. villa, apartment, commercial office, showroom).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold font-bold">▪</span>
+                <span>Approximate opening dimensions or number of doors/windows.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold font-bold">▪</span>
+                <span>Performance priorities (e.g. acoustic soundproofing, slimline look, weather sealing).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold font-bold">▪</span>
+                <span>Site readiness and expected completion timeline in Pune.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-surface border border-borderMuted shadow-2xs">
+            <span class="font-mono text-xs text-ink-muted uppercase tracking-wider block mb-2 font-semibold">
+              Direct Contact
+            </span>
+            <p class="font-body text-sm text-ink font-semibold mb-3">
+              Prefer an immediate conversation?
+            </p>
+            <a
+              href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Tiwari%20Enterprises,%20I%20would%20like%20to%20discuss%20an%20architectural%20project.`}
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Message on WhatsApp directly →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Validated Form (7 cols) -->
+        <div class="lg:col-span-7">
+          <ProjectEnquiryForm />
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

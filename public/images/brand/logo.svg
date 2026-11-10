@@ -1,0 +1,16 @@
+<svg width="480" height="120" viewBox="0 0 480 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="120" fill="#151B24"/>
+  <!-- TE Monogram -->
+  <g transform="skewX(-14) translate(40, -10)">
+    <!-- T -->
+    <polygon points="10,24 116,24 112,46 10,46" fill="#F5F5F2"/>
+    <polygon points="42,46 68,46 68,126 42,126" fill="#F5F5F2"/>
+    <!-- E -->
+    <polygon points="76,56 128,56 118,82 96,82 96,94 122,94 112,126 76,126" fill="#B99A65"/>
+    <polygon points="96,82 118,82 114,94 96,94" fill="#151B24"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="175" y="62" fill="#F5F5F2" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="34" letter-spacing="4">TIWARI <tspan fill="#B99A65">ENTERPRISES</tspan></text>
+  <text x="176" y="86" fill="#D8DCE0" font-family="Inter, sans-serif" font-weight="500" font-size="11" letter-spacing="3" opacity="0.8">ARCHITECTURAL ALUMINIUM &amp; GLASS</text>
+</svg>
+

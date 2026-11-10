@@ -1,0 +1,106 @@
+---
+import Logo from './Logo.astro';
+import Button from '../ui/Button.astro';
+import { SITE_CONFIG } from '../../utils/seo';
+
+const navItems = [
+  { label: 'Work', href: '/work', description: 'Selected residential & commercial case studies' },
+  { label: 'Solutions', href: '/solutions', description: 'Aluminium, glass & architectural systems' },
+  { label: 'Approach', href: '/approach', description: 'Our 5-phase execution & precision process' },
+  { label: 'Studio', href: '/studio', description: 'Craftsmanship, philosophy & Pune service areas' },
+];
+---
+
+<div
+  id="mobile-nav-overlay"
+  class="fixed inset-0 z-50 bg-[#FAFAF8] flex flex-col justify-between p-6 sm:p-10 transition-all duration-300 opacity-0 pointer-events-none -translate-y-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile Navigation Menu"
+>
+  <!-- Top Bar inside overlay -->
+  <div class="flex items-center justify-between border-b border-borderMuted pb-6">
+    <a href="/" class="focus-visible:outline-gold" id="overlay-logo-link">
+      <Logo size="sm" theme="light" />
+    </a>
+    <button
+      id="close-mobile-nav"
+      class="w-11 h-11 flex items-center justify-center text-ink border border-borderMuted bg-surface hover:border-gold hover:text-gold transition-colors"
+      aria-label="Close navigation menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="flex flex-col gap-6 my-auto py-8">
+    {navItems.map((item, index) => (
+      <a
+        href={item.href}
+        class="group flex flex-col gap-1 focus-visible:outline-gold"
+      >
+        <div class="flex items-baseline gap-4">
+          <span class="font-body text-xs text-gold font-mono font-bold">0{index + 1}</span>
+          <span class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-ink group-hover:text-gold transition-colors font-bold">
+            {item.label}
+          </span>
+        </div>
+        <span class="text-xs text-ink-muted pl-8 font-body">
+          {item.description}
+        </span>
+      </a>
+    ))}
+  </nav>
+
+  <!-- Bottom CTA & Quick Contacts -->
+  <div class="border-t border-borderMuted pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <Button href="/start-a-project" variant="primary" size="lg" className="w-full sm:w-auto text-center">
+      Start a Project
+    </Button>
+    <div class="flex items-center gap-6 text-xs text-ink-muted font-body">
+      <span>Pune & Nearby Areas</span>
+      <span>•</span>
+      <a href={`https://wa.me/${SITE_CONFIG.whatsapp}`} class="hover:text-gold transition-colors font-medium">
+        WhatsApp Enquiries
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById('open-mobile-nav');
+  const closeBtn = document.getElementById('close-mobile-nav');
+  const overlay = document.getElementById('mobile-nav-overlay');
+
+  function openMenu() {
+    if (!overlay) return;
+    overlay.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+    overlay.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeMenu() {
+    if (!overlay) return;
+    overlay.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+    overlay.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    document.body.style.overflow = '';
+    openBtn?.focus();
+  }
+
+  openBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && !overlay.classList.contains('pointer-events-none')) {
+      closeMenu();
+    }
+  });
+
+  overlay?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

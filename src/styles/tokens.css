@@ -1,0 +1,30 @@
+:root {
+  /* Light Theme Palette - Refined Architectural Studio */
+  --color-bg-base: #FAFAF8;         /* Warm architectural paper */
+  --color-surface: #FFFFFF;         /* Crisp white for cards and modules */
+  --color-surface-subtle: #F2F3F0;  /* Subtle secondary background */
+  --color-surface-hover: #ECEEEA;
+  
+  --color-ink: #111822;             /* Deep slate/charcoal for primary text & headings */
+  --color-navy: #1E293B;            /* Deep navy for structural elements */
+  --color-navy-soft: #334155;       /* Muted slate for body text */
+  --color-text-muted: #64748B;      /* Secondary descriptive text */
+  
+  --color-gold: #B38E46;            /* Refined architectural gold */
+  --color-gold-light: #CBA55D;      /* Lighter gold for hover states */
+  --color-gold-dark: #8F6E2C;       /* Dark gold for active buttons & borders */
+  --color-gold-subtle: rgba(179, 142, 70, 0.12);
+
+  --color-border: #E2E4E8;          /* Crisp hairline borders */
+  --color-border-subtle: #ECEEF2;
+  --color-border-dark: #CBD5E1;
+
+  --color-paper: #FAFAF8;
+  --color-teal: #1F4E5B;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --max-width-site: 1320px;
+  --site-padding: clamp(1.25rem, 4vw, 3.5rem);
+}

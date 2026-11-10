@@ -1,0 +1,53 @@
+---
+interface Props {
+  variant?: 'full' | 'mark-only';
+  theme?: 'dark' | 'light' | 'auto';
+  className?: string;
+  size?: 'sm' | 'md' | 'lg';
+  id?: string;
+}
+
+const {
+  variant = 'full',
+  theme = 'light',
+  className = '',
+  size = 'md',
+  id,
+} = Astro.props;
+
+const dimensions = {
+  sm: { imgW: 'w-8', text: 'text-sm', sub: 'text-[9px]' },
+  md: { imgW: 'w-10 sm:w-11', text: 'text-base sm:text-lg', sub: 'text-[9px] sm:text-[10px]' },
+  lg: { imgW: 'w-14', text: 'text-xl', sub: 'text-xs' },
+}[size];
+
+const isDark = theme === 'dark';
+const logoSrc = isDark ? '/images/brand/logo-mark-white.webp' : '/images/brand/logo-mark.webp';
+const textColor = isDark ? 'text-white' : 'text-ink';
+const subColor = isDark ? 'text-white/70' : 'text-ink-muted';
+---
+
+<div class={`inline-flex items-center gap-3 select-none ${className}`} id={id}>
+  <!-- Official Vector-Clean WebP Monogram -->
+  <img
+    src={logoSrc}
+    alt="Tiwari Enterprises Monogram"
+    width="675"
+    height="470"
+    class={`${dimensions.imgW} h-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105`}
+    loading="eager"
+    decoding="async"
+    data-logo-img
+  />
+
+  {variant === 'full' && (
+    <div class="flex flex-col leading-tight">
+      <span class={`font-display font-bold tracking-architectural uppercase ${textColor} ${dimensions.text}`} data-logo-title>
+        TIWARI <span class="text-gold">ENTERPRISES</span>
+      </span>
+      <span class={`font-body tracking-[0.22em] uppercase font-semibold ${subColor} ${dimensions.sub}`} data-logo-sub>
+        Architectural Aluminium & Glass
+      </span>
+    </div>
+  )}
+</div>

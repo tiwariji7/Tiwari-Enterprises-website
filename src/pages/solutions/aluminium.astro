@@ -1,0 +1,148 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SectionIntro from '../../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import Button from '../../components/ui/Button.astro';
+import { SOLUTIONS } from '../../data/solutions';
+import { PROJECTS } from '../../data/projects';
+
+const sol = SOLUTIONS['aluminium'];
+const relatedProjects = PROJECTS.filter((p) => p.discipline === 'Aluminium' || p.discipline === 'Combined');
+
+const seo = {
+  title: 'Architectural Aluminium Sliding Windows & Systems in Pune',
+  description: 'Custom architectural aluminium sliding windows, minimal frames, and curtain walls in Pune. 6063-T6 alloy, thermal-break options, and Pune monsoon weather-sealing.',
+};
+
+const breadcrumbs = [
+  { name: 'Solutions', url: '/solutions' },
+  { name: 'Aluminium Systems', url: '/solutions/aluminium' },
+];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/solutions/aluminium">
+  <article class="bg-paper pb-24">
+    <!-- Hero Banner -->
+    <div class="relative py-16 sm:py-24 bg-surface-subtle border-b border-borderMuted overflow-hidden">
+      <div class="absolute inset-0 architectural-grid opacity-40 pointer-events-none"></div>
+      <div class="max-w-site mx-auto px-5 sm:px-8 relative z-10">
+        <Breadcrumbs items={breadcrumbs} className="mb-6" />
+
+        <div class="max-w-3xl">
+          <span class="text-xs uppercase font-mono tracking-wider text-gold font-bold block mb-3">
+            PRIMARY ARCHITECTURAL DISCIPLINE · SUB-URL: /solutions/aluminium
+          </span>
+          <h1 class="font-display text-4xl sm:text-6xl uppercase tracking-tight font-bold text-ink leading-[1.02]">
+            {sol.heroHeadline}
+          </h1>
+          <p class="font-body text-base sm:text-lg text-ink-muted mt-4 leading-relaxed font-normal">
+            {sol.heroDescription}
+          </p>
+          <div class="pt-6 flex flex-wrap gap-4">
+            <Button href="/start-a-project?service=Aluminium" variant="primary" size="md">
+              Request Aluminium Quotation
+            </Button>
+            <Button href="/work/category/aluminium" variant="secondary" size="md">
+              View Aluminium Projects Sub-URL
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specifications Table -->
+    <div class="max-w-site mx-auto px-5 sm:px-8 py-14 border-b border-borderMuted">
+      <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-ink mb-6">
+        Technical Engineering Standards
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {sol.specifications.map((spec) => (
+          <div class="p-6 bg-surface border border-borderMuted shadow-2xs">
+            <span class="text-[11px] font-mono uppercase text-gold font-bold block mb-1">{spec.label}</span>
+            <span class="text-sm font-body text-ink font-semibold leading-snug block">{spec.value}</span>
+          </div>
+        ))}
+      </div>
+      <p class="mt-4 text-xs font-mono text-ink-muted">
+        📍 {sol.puneFocus}
+      </p>
+    </div>
+
+    <!-- Core Applications Grid -->
+    <div class="max-w-site mx-auto px-5 sm:px-8 py-16 border-b border-borderMuted">
+      <SectionIntro
+        eyebrow="SYSTEM CONFIGURATIONS"
+        heading="Aluminium Product Applications"
+        lead="Every system is fabricated to custom dimensions using precision factory mitres and mechanical corner cleats."
+        className="mb-12"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sol.applications.map((app, idx) => (
+          <div class="p-8 bg-surface border border-borderMuted flex flex-col justify-between shadow-xs">
+            <div>
+              <span class="text-xs font-mono text-gold font-bold mb-2 block">0{idx + 1} / SYSTEM</span>
+              <h3 class="font-display text-2xl uppercase font-bold text-ink mb-3">{app.title}</h3>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-6">{app.description}</p>
+
+              <div class="space-y-4 pt-4 border-t border-borderMuted text-xs font-body">
+                <div>
+                  <span class="text-ink-muted uppercase tracking-wider font-semibold block mb-1">Configurations:</span>
+                  <div class="flex flex-wrap gap-2">
+                    {app.configurations.map((c) => (
+                      <span class="px-2.5 py-1 bg-surface-subtle border border-borderMuted text-ink font-medium">{c}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-ink-muted uppercase tracking-wider font-semibold block mb-1">Architectural Finishes:</span>
+                  <p class="text-ink/80">{app.finishes.join(' · ')}</p>
+                </div>
+
+                <div>
+                  <span class="text-ink-muted uppercase tracking-wider font-semibold block mb-1">Hardware &amp; Rollers:</span>
+                  <p class="text-ink/80">{app.hardwareNotes}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-borderMuted mt-6">
+              <a href={`/start-a-project?service=Aluminium&app=${encodeURIComponent(app.title)}`} class="text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold inline-flex items-center gap-1">
+                <span>Inquire About This System</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Related Aluminium Projects -->
+    <div class="max-w-site mx-auto px-5 sm:px-8 py-16">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-ink">
+          Related Aluminium Case Studies
+        </h2>
+        <a href="/work/category/aluminium" class="text-xs uppercase tracking-wider text-gold hover:underline font-bold">
+          View All Aluminium Work Sub-URL →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {relatedProjects.map((p) => (
+          <a href={`/work/${p.slug}`} class="group bg-surface border border-borderMuted overflow-hidden flex flex-col justify-between hover:border-gold transition-colors shadow-2xs">
+            <div class="aspect-[4/3] overflow-hidden bg-surface-muted">
+              <img src={p.featuredImage} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <span class="text-[10px] font-mono uppercase text-gold font-bold">{p.location}</span>
+              <h3 class="font-display text-xl uppercase font-bold text-ink group-hover:text-gold transition-colors mt-1">{p.title}</h3>
+              <p class="font-body text-xs text-ink-muted mt-2 line-clamp-2">{p.summary}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </article>
+</SiteLayout>

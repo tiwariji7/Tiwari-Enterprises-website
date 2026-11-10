@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import BrandStatement from '../components/home/BrandStatement.astro';
+import CoreDisciplines from '../components/home/CoreDisciplines.astro';
+import SelectedWork from '../components/home/SelectedWork.astro';
+import CraftStatement from '../components/home/CraftStatement.astro';
+import ApproachPreview from '../components/home/ApproachPreview.astro';
+import TrustSection from '../components/home/TrustSection.astro';
+import ProjectCTA from '../components/home/ProjectCTA.astro';
+
+const seo = {
+  title: 'Tiwari Enterprises — Architectural Aluminium & Glass Solutions Pune',
+  description: 'Specialists in precision floor-to-ceiling aluminium sliding systems, slimline windows, and frameless structural glass installations for luxury residences, commercial spaces, and villas in Pune.',
+  image: 'https://tiwarienterprises.in/images/brand/og-image.svg',
+};
+---
+
+<SiteLayout seo={seo} currentPath="/">
+  <Hero />
+  <BrandStatement />
+  <CoreDisciplines />
+  <SelectedWork />
+  <CraftStatement />
+  <ApproachPreview />
+  <TrustSection />
+  <ProjectCTA />
+</SiteLayout>

@@ -1,0 +1,158 @@
+---
+import Logo from './Logo.astro';
+import Button from '../ui/Button.astro';
+import NavigationOverlay from './NavigationOverlay.astro';
+
+interface Props {
+  currentPath?: string;
+  isTransparent?: boolean;
+}
+
+const { currentPath = '/', isTransparent = false } = Astro.props;
+
+const navLinks = [
+  { label: 'Work', href: '/work' },
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Approach', href: '/approach' },
+  { label: 'Studio', href: '/studio' },
+];
+
+const isHome = currentPath === '/';
+---
+
+<header
+  id="site-header"
+  class={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 sm:py-5 ${
+    isHome
+      ? 'border-b border-white/10 bg-black/20 text-white'
+      : 'border-b border-borderMuted bg-surface/98 text-ink shadow-xs'
+  }`}
+  data-is-home={isHome ? 'true' : 'false'}
+>
+  <div class="max-w-site mx-auto px-5 sm:px-8 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="/" class="focus-visible:outline-gold inline-flex items-center" aria-label="Tiwari Enterprises Homepage" id="header-logo-link">
+      <Logo size="md" theme={isHome ? 'dark' : 'light'} id="header-logo-container" />
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8 lg:gap-10" aria-label="Primary Navigation">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`nav-link font-body text-xs uppercase tracking-[0.18em] transition-colors duration-200 py-1 font-semibold ${
+              isActive
+                ? 'text-gold border-b-2 border-gold'
+                : isHome
+                ? 'text-white/90 hover:text-gold'
+                : 'text-ink/80 hover:text-gold'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Desktop Action Buttons -->
+    <div class="hidden sm:flex items-center gap-4">
+      <Button href="/start-a-project" variant="primary" size="sm" className="bg-gold hover:bg-gold-light text-black font-bold">
+        Start a Project
+      </Button>
+    </div>
+
+    <!-- Mobile Navigation Toggle -->
+    <div class="flex items-center gap-3 md:hidden">
+      <Button href="/start-a-project" variant="primary" size="sm" className="text-[11px] px-3.5 py-2 bg-gold text-black font-bold">
+        Start
+      </Button>
+      <button
+        id="open-mobile-nav"
+        class={`w-10 h-10 flex flex-col items-center justify-center gap-1.5 border transition-colors ${
+          isHome
+            ? 'text-white border-white/30 bg-black/30 hover:border-gold hover:text-gold'
+            : 'text-ink border-borderMuted bg-surface hover:border-gold hover:text-gold'
+        }`}
+        aria-label="Open navigation menu"
+      >
+        <span class="w-5 h-[1.5px] bg-currentColor"></span>
+        <span class="w-5 h-[1.5px] bg-currentColor"></span>
+        <span class="w-3.5 h-[1.5px] bg-currentColor self-end mr-2"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<NavigationOverlay />
+
+<script>
+  const header = document.getElementById('site-header');
+  const isHome = header?.getAttribute('data-is-home') === 'true';
+  const navLinks = header?.querySelectorAll('.nav-link');
+  const mobileBtn = document.getElementById('open-mobile-nav');
+  const logoImg = document.querySelector('#header-logo-container [data-logo-img]') as HTMLImageElement | null;
+  const logoTitle = document.querySelector('#header-logo-container [data-logo-title]') as HTMLElement | null;
+  const logoSub = document.querySelector('#header-logo-container [data-logo-sub]') as HTMLElement | null;
+
+  function handleScroll() {
+    if (!header) return;
+    const scrolled = window.scrollY > 40;
+
+    if (scrolled) {
+      header.classList.remove('bg-black/20', 'border-white/10', 'text-white', 'py-4', 'sm:py-5');
+      header.classList.add('bg-surface/98', 'border-b', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
+
+      if (logoImg) logoImg.src = '/images/brand/logo-mark.webp';
+      if (logoTitle) {
+        logoTitle.classList.remove('text-white');
+        logoTitle.classList.add('text-ink');
+      }
+      if (logoSub) {
+        logoSub.classList.remove('text-white/70');
+        logoSub.classList.add('text-ink-muted');
+      }
+
+      navLinks?.forEach(link => {
+        if (!link.classList.contains('border-b-2')) {
+          link.classList.remove('text-white/90');
+          link.classList.add('text-ink/80');
+        }
+      });
+
+      if (mobileBtn) {
+        mobileBtn.classList.remove('text-white', 'border-white/30', 'bg-black/30');
+        mobileBtn.classList.add('text-ink', 'border-borderMuted', 'bg-surface');
+      }
+    } else if (isHome) {
+      header.classList.add('bg-black/20', 'border-white/10', 'text-white', 'py-4', 'sm:py-5');
+      header.classList.remove('bg-surface/98', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
+
+      if (logoImg) logoImg.src = '/images/brand/logo-mark-white.webp';
+      if (logoTitle) {
+        logoTitle.classList.add('text-white');
+        logoTitle.classList.remove('text-ink');
+      }
+      if (logoSub) {
+        logoSub.classList.add('text-white/70');
+        logoSub.classList.remove('text-ink-muted');
+      }
+
+      navLinks?.forEach(link => {
+        if (!link.classList.contains('border-b-2')) {
+          link.classList.add('text-white/90');
+          link.classList.remove('text-ink/80');
+        }
+      });
+
+      if (mobileBtn) {
+        mobileBtn.classList.add('text-white', 'border-white/30', 'bg-black/30');
+        mobileBtn.classList.remove('text-ink', 'border-borderMuted', 'bg-surface');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+</script>

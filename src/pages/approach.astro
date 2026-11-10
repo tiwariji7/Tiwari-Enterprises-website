@@ -1,0 +1,135 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import Button from '../components/ui/Button.astro';
+
+const seo = {
+  title: 'Our Architectural Execution Approach & Methodology in Pune',
+  description: 'Understand the 6-stage engineering and installation process at Tiwari Enterprises. From site laser measurement and material selection to handover in Pune.',
+};
+
+const breadcrumbs = [{ name: 'Approach', url: '/approach' }];
+
+const stages = [
+  {
+    num: '01',
+    title: 'Initial Consultation & Drawing Review',
+    summary: 'Aligning on architectural vision, floor plans, and elevation details.',
+    details: 'We begin by reviewing your architectural CAD drawings, structural openings, and client expectations. We discuss aesthetic preferences (e.g. slimline profiles vs heavy-duty systems) and functional requirements such as acoustic dampening or privacy glass.',
+    whatToPrepare: 'Architectural drawings, elevation sketches, or photos of existing openings.',
+  },
+  {
+    num: '02',
+    title: 'Site Visit & Laser Measurement',
+    summary: 'On-site verification of levels, plumb, and structural lintels in Pune.',
+    details: 'Our senior technical leads visit your site with digital laser levels. We inspect opening squareness, finished floor heights (FFL), ceiling reveal depths, and structural anchor integrity to ensure sub-frames will fit without forced on-site adjustments.',
+    whatToPrepare: 'Access to the site with civil milestones clearly marked.',
+  },
+  {
+    num: '03',
+    title: 'Material & Solution Selection',
+    summary: 'Clear discussion of alloy grades, glass assemblies, and hardware.',
+    details: 'We present verified profile catalogues, anodised or powder-coated colour samples, and glass types (clear, DGU, laminated, or acoustic). We walk you through hardware ratings (e.g. roller capacities, multi-point lock mechanisms) so you know exactly what is going into your building.',
+    whatToPrepare: 'Preferred finishes and acoustic/thermal performance priorities.',
+  },
+  {
+    num: '04',
+    title: 'Itemised Quotation & Scope Sign-Off',
+    summary: 'Detailed pricing with zero ambiguous lump-sums or hidden exclusions.',
+    details: 'You receive an itemised quote listing profile alloy grades, wall thickness, glass brand/stamp, hardware specifications, and estimated fabrication schedules. Scope boundaries are established transparently before work commences.',
+    whatToPrepare: 'Confirmation of project timeline and delivery schedule.',
+  },
+  {
+    num: '05',
+    title: 'Factory Fabrication & Coordinated Site Installation',
+    summary: 'Precision factory cutting, clean transport, and synchronized installation.',
+    details: 'Profiles are precision-mitred on calibrated machinery with reinforced corner cleats. Our experienced installation team coordinates on-site with your architect, civil contractor, and false ceiling teams to mount sub-frames, glaze panels, and inject weather-proof silicone.',
+    whatToPrepare: 'Site readiness for installation team and electrical power access.',
+  },
+  {
+    num: '06',
+    title: 'Inspection, Testing & Handover',
+    summary: 'Roller glide checks, lock testing, weather seal validation, and sign-off.',
+    details: 'We conduct a comprehensive punch-list review: verifying smooth sash sliding, tight compression gaskets, and spotless glass surfaces. Protective film remains in place until civil painting finishes to prevent construction scratches.',
+    whatToPrepare: 'Joint walkthrough with our lead supervisor for final sign-off.',
+  },
+];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/approach">
+  <div class="py-12 sm:py-20 bg-paper">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} className="mb-8" />
+
+      <div class="max-w-3xl mb-16 sm:mb-20">
+        <SectionIntro
+          eyebrow="OUR METHODOLOGY · SUB-URL: /approach"
+          heading="Predictable, Stage-by-Stage Precision"
+          lead="How we eliminate guesswork, delays, and craftsmanship compromises from initial concept to completed handover across Pune."
+        />
+      </div>
+
+      <!-- Process Stages -->
+      <div class="space-y-12 mb-20">
+        {stages.map((stage) => (
+          <div class="p-8 sm:p-12 bg-surface border border-borderMuted shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-4 flex flex-col gap-2">
+              <span class="font-mono text-xs uppercase tracking-widest text-gold font-bold">
+                STAGE {stage.num}
+              </span>
+              <h2 class="font-display text-3xl uppercase font-bold text-ink">
+                {stage.title}
+              </h2>
+              <p class="font-body text-sm text-ink-muted mt-1 leading-relaxed">
+                {stage.summary}
+              </p>
+            </div>
+
+            <div class="lg:col-span-8 flex flex-col gap-6 text-ink-muted font-body text-sm sm:text-base leading-relaxed">
+              <p>{stage.details}</p>
+              <div class="p-4 bg-surface-subtle border border-borderMuted flex items-start gap-3 text-xs font-body">
+                <span class="text-gold font-mono uppercase font-bold shrink-0">Client Preparation:</span>
+                <span class="text-ink font-medium">{stage.whatToPrepare}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Practical Notes & Scope Policy -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="p-8 bg-surface border border-borderMuted shadow-xs">
+          <h3 class="font-display text-2xl uppercase font-bold text-ink mb-3">
+            Handling Scope Adjustments
+          </h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            During construction, civil dimensions often vary from original blueprints. Whenever on-site conditions change, we recalculate structural requirements immediately and issue revised drawings and cost adjustments before proceeding.
+          </p>
+        </div>
+
+        <div class="p-8 bg-surface border border-borderMuted shadow-xs">
+          <h3 class="font-display text-2xl uppercase font-bold text-ink mb-3">
+            Pune Monsoon Engineering
+          </h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Pune experiences severe localized rainfall and wind pressure during monsoon months. We incorporate stepped internal drainage weep-holes, anti-rattle top guides, and structural silicone joints that prevent internal water seepage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Next Step CTA -->
+      <div class="p-10 bg-surface border border-gold/40 text-center flex flex-col items-center gap-6 shadow-sm">
+        <h3 class="font-display text-3xl sm:text-4xl uppercase font-bold text-ink">
+          Ready to review your project drawings?
+        </h3>
+        <p class="font-body text-sm text-ink-muted max-w-xl">
+          Share your site location and requirements with our execution team. We provide thorough site assessments across Pune.
+        </p>
+        <Button href="/start-a-project" variant="primary" size="lg">
+          Start Project Consultation
+        </Button>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

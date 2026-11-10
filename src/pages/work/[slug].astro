@@ -1,0 +1,192 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SectionIntro from '../../components/ui/SectionIntro.astro';
+import Button from '../../components/ui/Button.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import { PROJECTS, type Project } from '../../data/projects';
+
+export function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const seo = {
+  title: `${project.title} — Architectural Case Study`,
+  description: project.summary,
+  image: project.featuredImage,
+};
+
+const breadcrumbs = [
+  { name: 'Work', url: '/work' },
+  { name: project.title, url: `/work/${project.slug}` },
+];
+
+const otherProjects = PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 2);
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath={`/work/${project.slug}`}>
+  <!-- Project Hero -->
+  <article class="bg-paper pb-24">
+    <div class="max-w-site mx-auto px-5 sm:px-8 pt-8 sm:pt-14">
+      <Breadcrumbs items={breadcrumbs} className="mb-6" />
+
+      <!-- Header Information -->
+      <div class="border-b border-borderMuted pb-10 mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <a href={`/work/category/${project.discipline.toLowerCase()}`} class="px-3 py-1 bg-gold text-white text-xs uppercase font-mono font-bold tracking-wider hover:bg-gold-dark">
+            {project.discipline}
+          </a>
+          <a href={`/work/category/${project.category.toLowerCase()}`} class="px-3 py-1 bg-surface border border-borderMuted text-ink text-xs uppercase font-mono font-bold tracking-wider hover:border-gold">
+            {project.category}
+          </a>
+          <span class="text-ink-muted text-xs font-mono ml-auto font-medium">
+            {project.location} · {project.year}
+          </span>
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight font-bold text-ink leading-[1.02]">
+          {project.title}
+        </h1>
+
+        <p class="font-body text-lg sm:text-xl text-ink-muted max-w-3xl mt-4 leading-relaxed font-normal">
+          {project.summary}
+        </p>
+      </div>
+
+      <!-- Main Showcase Image -->
+      <div class="aspect-[16/9] w-full overflow-hidden bg-surface-muted mb-16 border border-borderMuted shadow-sm">
+        <img
+          src={project.featuredImage}
+          alt={project.title}
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Architectural Brief & Specifications Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-borderMuted">
+        <!-- Left: Brief & Scope (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-10">
+          <div>
+            <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-gold mb-3">
+              Project Brief
+            </h2>
+            <p class="font-body text-base text-ink/80 leading-relaxed">
+              {project.brief}
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-ink mb-4">
+              Scope of Execution
+            </h2>
+            <ul class="space-y-3 font-body text-sm text-ink-muted">
+              {project.scope.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-gold font-bold">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: Verified Materials Specification (5 cols) -->
+        <div class="lg:col-span-5 bg-surface border border-borderMuted p-8 flex flex-col justify-between shadow-xs">
+          <div>
+            <h3 class="font-display text-xl uppercase tracking-architectural text-ink font-bold mb-4">
+              Verified Materials &amp; Systems
+            </h3>
+            <ul class="divide-y divide-borderMuted font-body text-xs text-ink/85">
+              {project.materials.map((mat) => (
+                <li class="py-3 flex items-center justify-between">
+                  <span class="text-ink font-medium">{mat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-8 border-t border-borderMuted mt-8">
+            <span class="font-body text-xs text-ink-muted block mb-3 font-medium">
+              Need a similar solution for your space in Pune?
+            </span>
+            <Button
+              href={`/start-a-project?ref=${project.slug}&service=${project.discipline}`}
+              variant="primary"
+              size="md"
+              className="w-full text-center"
+            >
+              Discuss a Similar Project
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Image Gallery -->
+      {project.galleryImages.length > 1 && (
+        <div class="pt-16 pb-16 border-b border-borderMuted">
+          <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-ink mb-8">
+            Installation Details
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {project.galleryImages.slice(1).map((img, i) => (
+              <div class="aspect-[4/3] bg-surface-muted overflow-hidden border border-borderMuted shadow-xs">
+                <img
+                  src={img}
+                  alt={`${project.title} detail view ${i + 1}`}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Related Projects Sub-Links -->
+      <div class="pt-16">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-display text-2xl uppercase tracking-wider font-bold text-ink">
+            More Selected Work
+          </h2>
+          <a href="/work" class="text-xs uppercase tracking-wider text-gold hover:underline font-bold">
+            View All Work Overview →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {otherProjects.map((item) => (
+            <a
+              href={`/work/${item.slug}`}
+              class="group bg-surface border border-borderMuted p-6 flex flex-col justify-between hover:border-gold transition-colors shadow-2xs"
+            >
+              <div>
+                <span class="font-mono text-[10px] text-gold uppercase tracking-wider font-bold">
+                  {item.category} · {item.discipline}
+                </span>
+                <h3 class="font-display text-2xl uppercase font-bold text-ink group-hover:text-gold transition-colors mt-1">
+                  {item.title}
+                </h3>
+                <p class="font-body text-xs text-ink-muted mt-2 line-clamp-2">
+                  {item.summary}
+                </p>
+              </div>
+              <span class="text-xs text-gold font-bold mt-4 inline-flex items-center gap-1">
+                <span>View Case Study Sub-URL</span>
+                <span>→</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </article>
+</SiteLayout>

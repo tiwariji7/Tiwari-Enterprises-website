@@ -1,0 +1,57 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/ui/Button.astro';
+import { SITE_CONFIG } from '../utils/seo';
+
+const seo = {
+  title: 'Enquiry Received — Thank You',
+  description: 'Your project enquiry has been submitted to Tiwari Enterprises. We will review your requirements and reach out shortly.',
+  noindex: true,
+};
+---
+
+<SiteLayout seo={seo} currentPath="/thank-you">
+  <div class="py-20 sm:py-32 bg-paper min-h-[70vh] flex items-center justify-center">
+    <div class="max-w-xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center gap-6">
+      <div class="w-16 h-16 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <span class="font-mono text-xs text-gold uppercase tracking-widest font-bold">
+        ENQUIRY CONFIRMED · SUB-URL: /thank-you
+      </span>
+
+      <h1 class="font-display text-4xl sm:text-5xl uppercase tracking-tight font-bold text-ink">
+        Thank You for Reaching Out.
+      </h1>
+
+      <p class="font-body text-sm sm:text-base text-ink-muted leading-relaxed">
+        We have received your project details. Our technical team is reviewing your requirements and will contact you via phone or WhatsApp within 24 business hours to arrange a preliminary discussion or site visit in Pune.
+      </p>
+
+      <div class="p-6 bg-surface border border-borderMuted w-full text-left space-y-2 mt-4 font-body text-xs text-ink-muted shadow-xs">
+        <strong class="text-ink block uppercase font-mono tracking-wider text-[11px]">What happens next:</strong>
+        <p>1. Our technical lead reviews your opening dimensions and design brief.</p>
+        <p>2. We confirm feasibility, profile series suitability, and glass specifications.</p>
+        <p>3. We schedule an on-site laser assessment across Pune if required.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-6">
+        <Button href="/" variant="primary" size="md">
+          Return to Homepage
+        </Button>
+        <Button
+          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Tiwari%20Enterprises,%20I%20just%20submitted%20a%20project%20enquiry%20on%20your%20website.`}
+          variant="secondary"
+          size="md"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Follow up on WhatsApp
+        </Button>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

@@ -1,0 +1,42 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import { SITE_CONFIG } from '../../utils/seo';
+---
+
+<section class="py-24 sm:py-32 bg-surface-subtle relative border-t border-borderMuted overflow-hidden">
+  <div class="absolute inset-0 architectural-grid opacity-50 pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-site mx-auto px-5 sm:px-8">
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+      <Eyebrow text="PUNE & NEARBY AREAS" variant="gold" align="center" />
+
+      <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight font-bold text-ink leading-[1.02]">
+        Let's shape your next space.
+      </h2>
+
+      <p class="font-body text-base sm:text-lg text-ink-muted max-w-2xl leading-relaxed">
+        Whether you are building a private residence in Baner, renovating an office in Koregaon Park, or planning an architectural villa in Wakad, we are ready to discuss your drawings and site requirements.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-4">
+        <Button href="/start-a-project" variant="primary" size="lg">
+          Start a Project
+        </Button>
+        <Button
+          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Tiwari%20Enterprises,%20I%20have%20an%20architectural%20aluminium/glass%20enquiry.`}
+          variant="secondary"
+          size="lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Direct WhatsApp Chat
+        </Button>
+      </div>
+
+      <div class="pt-8 text-xs font-mono text-ink-muted tracking-wider">
+        NO SPAM · DIRECT CONSULTATION WITH EXECUTION SPECIALISTS
+      </div>
+    </div>
+  </div>
+</section>

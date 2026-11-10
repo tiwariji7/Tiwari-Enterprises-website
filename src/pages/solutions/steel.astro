@@ -1,0 +1,70 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import Button from '../../components/ui/Button.astro';
+import { SOLUTIONS } from '../../data/solutions';
+
+const sol = SOLUTIONS['steel'];
+
+const seo = {
+  title: 'Secondary Structural Steel Works in Pune',
+  description: 'Precision secondary structural steel sub-frames, canopy frameworks, and architectural stairs engineered in Pune by Tiwari Enterprises.',
+};
+
+const breadcrumbs = [
+  { name: 'Solutions', url: '/solutions' },
+  { name: 'Secondary Steel Works', url: '/solutions/steel' },
+];
+---
+
+<SiteLayout seo={seo} breadcrumbs={breadcrumbs} currentPath="/solutions/steel">
+  <article class="bg-paper pb-24">
+    <div class="relative py-16 sm:py-24 bg-surface-subtle border-b border-borderMuted overflow-hidden">
+      <div class="max-w-site mx-auto px-5 sm:px-8 relative z-10">
+        <Breadcrumbs items={breadcrumbs} className="mb-6" />
+        <div class="max-w-3xl">
+          <span class="text-xs uppercase font-mono tracking-wider text-ink-muted font-bold block mb-3">
+            SUPPORTING ARCHITECTURAL SERVICE · SUB-URL: /solutions/steel
+          </span>
+          <h1 class="font-display text-4xl sm:text-6xl uppercase tracking-tight font-bold text-ink leading-[1.02]">
+            {sol.heroHeadline}
+          </h1>
+          <p class="font-body text-base sm:text-lg text-ink-muted mt-4 leading-relaxed font-normal">
+            {sol.heroDescription}
+          </p>
+          <div class="pt-6">
+            <Button href="/start-a-project?service=Steel" variant="primary" size="md">
+              Inquire About Steel Works
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-site mx-auto px-5 sm:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {sol.applications.map((app) => (
+          <div class="p-8 bg-surface border border-borderMuted shadow-xs">
+            <h3 class="font-display text-2xl uppercase font-bold text-ink mb-3">{app.title}</h3>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">{app.description}</p>
+            <div class="text-xs text-ink-muted space-y-2 pt-4 border-t border-borderMuted">
+              <p><strong class="text-ink">Sections:</strong> {app.configurations.join(', ')}</p>
+              <p><strong class="text-ink">Protection:</strong> {app.finishes.join(', ')}</p>
+              <p><strong class="text-ink">Hardware:</strong> {app.hardwareNotes}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="p-8 bg-surface border border-borderMuted flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <div>
+          <h4 class="font-display text-xl uppercase font-bold text-ink">Need coordination with aluminium and glass?</h4>
+          <p class="font-body text-xs sm:text-sm text-ink-muted mt-1">We handle the entire structural envelope so steel sub-frames and glazing fit seamlessly.</p>
+        </div>
+        <Button href="/start-a-project?service=Steel" variant="secondary" size="md">
+          Start Discussion
+        </Button>
+      </div>
+    </div>
+  </article>
+</SiteLayout>
