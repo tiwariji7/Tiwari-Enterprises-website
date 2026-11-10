@@ -58,16 +58,22 @@ const isHome = currentPath === '/';
 
     <!-- Desktop Action Buttons -->
     <div class="hidden sm:flex items-center gap-4">
-      <Button href="/start-a-project" variant="primary" size="sm" className="bg-gold hover:bg-gold-light text-black font-bold">
+      <a
+        href="/start-a-project"
+        class="inline-flex items-center justify-center font-body text-xs tracking-wider uppercase px-5 py-2.5 bg-gold hover:bg-gold-light active:bg-gold-dark text-black font-bold transition-all duration-200 shadow-sm cursor-pointer"
+      >
         Start a Project
-      </Button>
+      </a>
     </div>
 
     <!-- Mobile Navigation Toggle -->
     <div class="flex items-center gap-3 md:hidden">
-      <Button href="/start-a-project" variant="primary" size="sm" className="text-[11px] px-3.5 py-2 bg-gold text-black font-bold">
+      <a
+        href="/start-a-project"
+        class="inline-flex items-center justify-center font-body text-[11px] tracking-wider uppercase px-3.5 py-2 bg-gold hover:bg-gold-light active:bg-gold-dark text-black font-bold transition-all duration-200 shadow-sm"
+      >
         Start
-      </Button>
+      </a>
       <button
         id="open-mobile-nav"
         class={`w-10 h-10 flex flex-col items-center justify-center gap-1.5 border transition-colors ${
