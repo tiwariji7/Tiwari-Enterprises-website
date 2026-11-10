@@ -83,7 +83,7 @@ const heroSlides = [
         <img
           src={slide.image}
           alt={slide.alt}
-          class={`hero-slide-img w-full h-full object-cover object-center filter contrast-[1.08] brightness-[0.78] transition-transform duration-[7500ms] ease-out will-change-transform ${
+          class={`hero-slide-img w-full h-full object-cover object-center filter contrast-[1.04] brightness-[0.96] transition-transform duration-[7500ms] ease-out will-change-transform ${
             index === 0 ? 'scale-105' : 'scale-100'
           }`}
           loading={index === 0 ? 'eager' : 'lazy'}
@@ -93,28 +93,32 @@ const heroSlides = [
       </div>
     ))}
 
-    <!-- Deep Architectural Optical Gradients (Ensures 7:1 Contrast While Preserving Photography Radiance) -->
-    <div class="absolute inset-0 z-10 bg-gradient-to-t from-charcoal via-charcoal/35 to-charcoal/50 pointer-events-none"></div>
-    <div class="absolute inset-y-0 left-0 w-full lg:w-4/5 z-10 bg-gradient-to-r from-charcoal/90 via-charcoal/45 to-transparent pointer-events-none"></div>
+    <!-- Photographic Clarity Scrims: Keep Background Radiant While Making Left-Aligned Text 100% Readable -->
+    <!-- Top Nav Shadow -->
+    <div class="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-[#0B0F15]/90 via-[#0B0F15]/40 to-transparent pointer-events-none z-10"></div>
+    <!-- Left Masthead Directional Scrim (Text Reading Zone) -->
+    <div class="absolute inset-y-0 left-0 w-full sm:w-[85%] md:w-[72%] lg:w-[58%] bg-gradient-to-r from-[#0B0F15]/95 via-[#0B0F15]/75 to-transparent pointer-events-none z-10"></div>
+    <!-- Bottom Controller Fade -->
+    <div class="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0B0F15]/90 via-[#0B0F15]/30 to-transparent pointer-events-none z-10"></div>
   </div>
 
   <!-- Main Architectural Masthead (Generous 112px+ Navbar Clearance) -->
   <div class="relative z-20 max-w-site mx-auto px-5 sm:px-8 w-full pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 my-auto">
-    <div class="max-w-4xl flex flex-col items-start gap-4 sm:gap-5 text-offWhite" id="hero-text-block">
+    <div class="max-w-4xl flex flex-col items-start gap-4 sm:gap-5" id="hero-text-block">
       
       <!-- Permanent Semantic H1: Stable, Singular, Architecturally Integrated -->
       <div class="flex items-center gap-2.5">
-        <span class="w-2 h-2 rounded-full bg-metallicGold shrink-0" aria-hidden="true"></span>
-        <h1 class="font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/80 font-medium">
+        <span class="w-2 h-2 rounded-full bg-[#ECC880] shadow-[0_0_8px_rgba(236,200,128,0.7)] shrink-0" aria-hidden="true"></span>
+        <h1 class="font-mono text-[11px] sm:text-xs uppercase tracking-[0.24em] text-white font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
           Premium Aluminium &amp; Glass Solutions in Pune
         </h1>
       </div>
 
       <!-- Live Category Eyebrow -->
       <div class="flex items-center gap-3">
-        <span class="w-7 h-[2px] bg-metallicGold shrink-0" aria-hidden="true"></span>
+        <span class="w-8 h-[2px] bg-[#ECC880] shadow-[0_0_6px_rgba(236,200,128,0.6)] shrink-0" aria-hidden="true"></span>
         <span
-          class="font-body text-xs sm:text-sm uppercase tracking-[0.22em] font-bold text-metallicGold transition-opacity duration-300"
+          class="font-body text-xs sm:text-sm uppercase tracking-[0.22em] font-bold text-[#ECC880] drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] transition-opacity duration-300"
           id="hero-category"
         >
           {heroSlides[0].category}
@@ -123,7 +127,7 @@ const heroSlides = [
 
       <!-- Live Slide Heading (Semantically H2 for All Slides per SEO Spec) -->
       <h2
-        class="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase tracking-tight font-bold text-white leading-[0.98] drop-shadow-md transition-all duration-300"
+        class="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase tracking-tight font-bold text-white leading-[0.98] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] transition-all duration-300"
         id="hero-headline"
       >
         {heroSlides[0].headline}
@@ -131,20 +135,21 @@ const heroSlides = [
 
       <!-- Live Description -->
       <p
-        class="font-body text-base sm:text-lg lg:text-xl text-offWhite/90 leading-relaxed max-w-2xl font-light drop-shadow-sm transition-opacity duration-300"
+        class="font-body text-base sm:text-lg lg:text-xl text-white font-normal leading-relaxed max-w-2xl drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)] transition-opacity duration-300"
         id="hero-description"
       >
         {heroSlides[0].description}
       </p>
 
-      <!-- Semantic List of Technical Specification Tags -->
+      <!-- Semantic List of Technical Specification Tags (High-Contrast Architectural Badges) -->
       <ul
         class="flex flex-wrap items-center gap-2 pt-1 pb-1 transition-opacity duration-300"
         id="hero-tags-list"
         aria-label="System key specifications"
       >
         {heroSlides[0].tags.map((tag) => (
-          <li class="px-3 py-1 bg-charcoal/85 border border-white/20 text-offWhite font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium shadow-2xs">
+          <li class="px-3.5 py-1.5 bg-[#0B0F15]/90 backdrop-blur-md border border-[#ECC880]/60 text-white font-mono text-[11px] sm:text-xs tracking-wider uppercase font-semibold shadow-[0_4px_14px_rgba(0,0,0,0.8)] inline-flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#ECC880] shrink-0" aria-hidden="true"></span>
             {tag}
           </li>
         ))}
@@ -155,14 +160,14 @@ const heroSlides = [
         <a
           href={heroSlides[0].primaryCta.href}
           id="hero-primary-cta"
-          class="px-7 py-3.5 bg-metallicGold hover:bg-lightGold active:bg-[#937848] text-charcoal text-xs sm:text-sm uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-white"
+          class="px-7 py-3.5 bg-[#ECC880] hover:bg-[#F3D79A] text-charcoal text-xs sm:text-sm uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer shadow-[0_6px_22px_rgba(0,0,0,0.6)] inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-white"
         >
           <span id="hero-cta-label">{heroSlides[0].primaryCta.label}</span>
         </a>
         
         <a
           href={heroSlides[0].secondaryCta.href}
-          class="px-7 py-3.5 bg-charcoal/60 hover:bg-white hover:text-charcoal border border-white/40 text-white text-xs sm:text-sm uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold"
+          class="px-7 py-3.5 bg-[#0B0F15]/80 hover:bg-white hover:text-charcoal border border-white/80 text-white text-xs sm:text-sm uppercase tracking-wider font-semibold backdrop-blur-sm transition-all duration-200 cursor-pointer shadow-[0_6px_22px_rgba(0,0,0,0.6)] focus-visible:outline-2 focus-visible:outline-[#ECC880]"
         >
           {heroSlides[0].secondaryCta.label}
         </a>
@@ -172,7 +177,7 @@ const heroSlides = [
           id="hero-whatsapp-cta"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs uppercase tracking-wider text-offWhite/80 hover:text-metallicGold font-medium pl-1 inline-flex items-center gap-1.5 transition-colors focus-visible:outline-2 focus-visible:outline-metallicGold py-2"
+          class="px-4 py-3 bg-[#25D366]/20 hover:bg-[#25D366] text-[#25D366] hover:text-charcoal border border-[#25D366]/60 backdrop-blur-sm text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-1.5 transition-all shadow-[0_4px_14px_rgba(0,0,0,0.5)] focus-visible:outline-2 focus-visible:outline-[#25D366]"
           aria-label="Chat directly on WhatsApp about architectural projects in Pune"
         >
           <span>WhatsApp Chat →</span>
@@ -182,16 +187,16 @@ const heroSlides = [
   </div>
 
   <!-- Bottom Architectural Metadata & Slider Controller Bar -->
-  <div class="relative z-20 border-t border-white/15 bg-charcoal/90 py-4 sm:py-5 backdrop-blur-none">
+  <div class="relative z-20 border-t border-white/20 bg-[#0B0F15]/95 py-4 sm:py-5 backdrop-blur-md">
     <div class="max-w-site mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4 text-white text-xs">
       
       <!-- Slide Counter and System Discipline Identifier -->
       <div class="flex items-center gap-3 font-mono">
-        <span class="text-metallicGold font-bold text-sm tracking-wider" id="hero-slide-num">01</span>
+        <span class="text-[#ECC880] font-bold text-sm tracking-wider" id="hero-slide-num">01</span>
         <span class="text-white/40">/</span>
         <span class="text-white/60">04</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-metallicGold shrink-0" aria-hidden="true"></span>
-        <span class="text-white/90 font-medium uppercase tracking-wider text-xs sm:text-sm transition-opacity duration-300" id="hero-system-name">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ECC880] shadow-[0_0_6px_rgba(236,200,128,0.6)] shrink-0" aria-hidden="true"></span>
+        <span class="text-white font-semibold uppercase tracking-wider text-xs sm:text-sm drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] transition-opacity duration-300" id="hero-system-name">
           {heroSlides[0].category}
         </span>
       </div>
@@ -203,8 +208,8 @@ const heroSlides = [
         <div class="flex items-center gap-2" role="tablist" aria-label="Slide selectors">
           {heroSlides.map((slide, i) => (
             <button
-              class={`progress-bar-btn relative h-1.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold ${
-                i === 0 ? 'w-10 bg-metallicGold' : 'w-4 bg-white/25 hover:bg-white/60'
+              class={`progress-bar-btn relative h-1.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#ECC880] ${
+                i === 0 ? 'w-10 bg-[#ECC880] shadow-[0_0_10px_rgba(236,200,128,0.7)]' : 'w-4 bg-white/35 hover:bg-white/70'
               }`}
               data-target={i}
               role="tab"
@@ -346,12 +351,12 @@ const heroSlides = [
     // Update progress bars
     progressBars.forEach((bar, i) => {
       if (i === activeIndex) {
-        bar.classList.remove('w-4', 'bg-white/25');
-        bar.classList.add('w-10', 'bg-metallicGold');
+        bar.classList.remove('w-4', 'bg-white/35');
+        bar.classList.add('w-10', 'bg-[#ECC880]', 'shadow-[0_0_10px_rgba(236,200,128,0.7)]');
         bar.setAttribute('aria-selected', 'true');
       } else {
-        bar.classList.remove('w-10', 'bg-metallicGold');
-        bar.classList.add('w-4', 'bg-white/25');
+        bar.classList.remove('w-10', 'bg-[#ECC880]', 'shadow-[0_0_10px_rgba(236,200,128,0.7)]');
+        bar.classList.add('w-4', 'bg-white/35');
         bar.setAttribute('aria-selected', 'false');
       }
     });
@@ -385,7 +390,7 @@ const heroSlides = [
         tagsList.innerHTML = current.tags
           .map(
             (tag) =>
-              `<li class="px-3 py-1 bg-charcoal/85 border border-white/20 text-offWhite font-mono text-[11px] sm:text-xs tracking-wider uppercase font-medium shadow-2xs">${tag}</li>`
+              `<li class="px-3.5 py-1.5 bg-[#0B0F15]/90 backdrop-blur-md border border-[#ECC880]/60 text-white font-mono text-[11px] sm:text-xs tracking-wider uppercase font-semibold shadow-[0_4px_14px_rgba(0,0,0,0.8)] inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ECC880] shrink-0" aria-hidden="true"></span>${tag}</li>`
           )
           .join('');
       }
