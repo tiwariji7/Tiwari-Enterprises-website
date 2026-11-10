@@ -14,7 +14,7 @@ export default {
         },
         navy: {
           DEFAULT: '#1E293B',
-          soft: '#F2F3F0',
+          soft: '#334155',
           deep: '#0F172A',
         },
         surface: {
@@ -51,6 +51,10 @@ export default {
       letterSpacing: {
         architectural: '0.15em',
         tightest: '-0.03em',
+      },
+      boxShadow: {
+        '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+        'xs': '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
       },
     },
   },

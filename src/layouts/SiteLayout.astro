@@ -76,7 +76,7 @@ const breadcrumbSchema = breadcrumbs ? generateBreadcrumbSchema(breadcrumbs) : n
   <body class="bg-paper text-ink antialiased min-h-screen flex flex-col selection:bg-gold selection:text-white">
     <SiteHeader currentPath={currentPath} />
     
-    <main class="flex-grow pt-20" id="main-content">
+    <main class={`flex-grow ${currentPath === '/' ? '' : 'pt-20'}`} id="main-content">
       <slot />
     </main>
 

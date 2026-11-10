@@ -28,7 +28,7 @@ export const SOLUTIONS: Record<string, Solution> = {
     shortDescription: 'Precision engineered thermal-break sliding systems, slimline casement windows, and custom structural facades.',
     heroHeadline: 'Engineered Precision in Architectural Aluminium.',
     heroDescription: 'From minimalist floor-to-ceiling sliding systems to heavy-duty structural facades, we craft high-performance aluminium solutions tailored for contemporary residences, commercial buildings, and luxury villas across Pune.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
+    image: '/images/hero/hero-sliding.webp',
     applications: [
       {
         title: 'Minimalist Slimline Sliding Systems',
@@ -41,7 +41,7 @@ export const SOLUTIONS: Record<string, Solution> = {
         title: 'High-Performance Casement Windows & Doors',
         description: 'Tilt-and-turn and side-hung windows providing maximum acoustic insulation, airtightness, and monsoon water resistance.',
         configurations: ['Open-out / Open-in casements', 'Tilt-and-turn dual function', 'Fixed architectural vision panels', 'Top-hung ventilator sashes'],
-        finishes: ['Textured architectural architectural mattes', 'Wood-grain sublimation finishes', 'Custom RAL colour matching'],
+        finishes: ['Textured architectural mattes', 'Wood-grain sublimation finishes', 'Custom RAL colour matching'],
         hardwareNotes: '3D adjustable heavy-duty friction stays, compression gaskets with vulcanized corners.',
       },
       {
@@ -73,8 +73,8 @@ export const SOLUTIONS: Record<string, Solution> = {
     isPrimary: true,
     shortDescription: 'Toughened glass partitions, frameless balustrades, shower enclosures, and bespoke structural glass installations.',
     heroHeadline: 'Clarity, Safety & Structural Elegance in Glass.',
-    heroDescription: 'Transforming interior daylight and exterior facades through safety-engineered toughened glass, frameless railings, acoustic acoustic partitions, and custom architectural glazing.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
+    heroDescription: 'Transforming interior daylight and exterior facades through safety-engineered toughened glass, frameless railings, acoustic partitions, and custom architectural glazing.',
+    image: '/images/hero/hero-partitions.webp',
     applications: [
       {
         title: 'Architectural Glass Railings & Balustrades',
@@ -120,7 +120,7 @@ export const SOLUTIONS: Record<string, Solution> = {
     shortDescription: 'Precision secondary steel sub-frames, architectural staircases, and heavy canopy supports.',
     heroHeadline: 'Sub-Structure Engineering & Architectural Steel.',
     heroDescription: 'Robust, clean-tolerance secondary steel frameworks engineered to support large-span glass installations, heavy cantilevered canopies, and custom architectural features.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186f5f7?auto=format&fit=crop&w=1600&q=80',
+    image: '/images/work/prabhat-facade.webp',
     applications: [
       {
         title: 'Glass Sub-Frame Supports',
@@ -151,7 +151,7 @@ export const SOLUTIONS: Record<string, Solution> = {
     shortDescription: 'Acoustic bulkheads, perimeter lighting coves, and seamless gypsum ceiling integration.',
     heroHeadline: 'Seamless Architectural Ceilings & Lighting Coves.',
     heroDescription: 'Tailored false ceiling and perimeter bulkhead systems designed to integrate flush curtain tracks, concealed linear lighting, and air-conditioning diffusers alongside glass facades.',
-    image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80',
+    image: '/images/work/kothrud-courtyard.webp',
     applications: [
       {
         title: 'Perimeter Curtain & Blind Pockets',
@@ -174,7 +174,7 @@ export const SOLUTIONS: Record<string, Solution> = {
     shortDescription: 'Custom architectural metal shelving, glass display vitrines, and interior space dividers.',
     heroHeadline: 'Refined Details for Contemporary Interiors.',
     heroDescription: 'Bringing the same architectural discipline of aluminium and glass to bespoke interior elements: room dividers, vanity mirrors, and custom display elements.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80',
+    image: '/images/hero/hero-glazing.webp',
     applications: [
       {
         title: 'Bespoke Slatted Screens & Metal Panelling',

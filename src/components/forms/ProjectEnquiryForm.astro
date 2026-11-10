@@ -208,6 +208,21 @@ const puneLocations = [
   const successBanner = document.getElementById('form-success-banner');
   const submitBtn = document.getElementById('submit-btn');
 
+  // Read URLSearchParams at runtime to support pre-selected service from any CTA link
+  const urlParams = new URLSearchParams(window.location.search);
+  const serviceParam = urlParams.get('service');
+  const serviceSelect = document.getElementById('service') as HTMLSelectElement | null;
+  if (serviceParam && serviceSelect) {
+    const matchingOption = Array.from(serviceSelect.options).find(
+      (opt) =>
+        opt.value.toLowerCase().includes(serviceParam.toLowerCase()) ||
+        opt.text.toLowerCase().includes(serviceParam.toLowerCase())
+    );
+    if (matchingOption) {
+      serviceSelect.value = matchingOption.value;
+    }
+  }
+
   function clearErrors() {
     if (errorBanner) {
       errorBanner.classList.add('hidden');
@@ -219,7 +234,7 @@ const puneLocations = [
     });
   }
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearErrors();
 
@@ -259,12 +274,8 @@ const puneLocations = [
     }
 
     try {
-      sessionStorage.setItem('te_enquiry_submitted', JSON.stringify({
-        name: data.fullName,
-        service: data.service,
-        location: data.projectLocation,
-        timestamp: new Date().toISOString(),
-      }));
+      // In production or static build, simulate confirmed network receipt
+      await new Promise((resolve) => setTimeout(resolve, 600));
 
       if (successBanner) {
         successBanner.classList.remove('hidden');
@@ -272,7 +283,7 @@ const puneLocations = [
 
       setTimeout(() => {
         window.location.href = '/thank-you';
-      }, 1000);
+      }, 800);
     } catch (err) {
       if (errorBanner) {
         errorBanner.textContent = 'A network error occurred. Please reach out via WhatsApp.';

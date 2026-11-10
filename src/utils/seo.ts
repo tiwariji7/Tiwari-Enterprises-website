@@ -31,7 +31,7 @@ export function generateLocalBusinessSchema() {
     legalName: SITE_CONFIG.name,
     url: SITE_CONFIG.domain,
     logo: `${SITE_CONFIG.domain}/favicon.svg`,
-    image: `${SITE_CONFIG.domain}/images/hero/luxury-villa-facade.jpg`,
+    image: `${SITE_CONFIG.domain}/images/hero/hero-sliding.webp`,
     description: SITE_CONFIG.defaultDescription,
     telephone: SITE_CONFIG.phone,
     email: SITE_CONFIG.email,

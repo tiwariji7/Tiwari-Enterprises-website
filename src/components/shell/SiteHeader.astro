@@ -25,7 +25,7 @@ const isHome = currentPath === '/';
   class={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 sm:py-5 ${
     isHome
       ? 'border-b border-white/10 bg-black/20 text-white'
-      : 'border-b border-borderMuted bg-surface/98 text-ink shadow-xs'
+      : 'border-b border-borderMuted bg-surface/[0.98] text-ink shadow-xs'
   }`}
   data-is-home={isHome ? 'true' : 'false'}
 >
@@ -77,9 +77,9 @@ const isHome = currentPath === '/';
         }`}
         aria-label="Open navigation menu"
       >
-        <span class="w-5 h-[1.5px] bg-currentColor"></span>
-        <span class="w-5 h-[1.5px] bg-currentColor"></span>
-        <span class="w-3.5 h-[1.5px] bg-currentColor self-end mr-2"></span>
+        <span class="w-5 h-[1.5px] bg-current"></span>
+        <span class="w-5 h-[1.5px] bg-current"></span>
+        <span class="w-3.5 h-[1.5px] bg-current self-end mr-2"></span>
       </button>
     </div>
   </div>
@@ -102,7 +102,7 @@ const isHome = currentPath === '/';
 
     if (scrolled) {
       header.classList.remove('bg-black/20', 'border-white/10', 'text-white', 'py-4', 'sm:py-5');
-      header.classList.add('bg-surface/98', 'border-b', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
+      header.classList.add('bg-surface/[0.98]', 'border-b', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
 
       if (logoImg) logoImg.src = '/images/brand/logo-mark.webp';
       if (logoTitle) {
@@ -127,7 +127,7 @@ const isHome = currentPath === '/';
       }
     } else if (isHome) {
       header.classList.add('bg-black/20', 'border-white/10', 'text-white', 'py-4', 'sm:py-5');
-      header.classList.remove('bg-surface/98', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
+      header.classList.remove('bg-surface/[0.98]', 'border-borderMuted', 'text-ink', 'py-3', 'shadow-xs');
 
       if (logoImg) logoImg.src = '/images/brand/logo-mark-white.webp';
       if (logoTitle) {

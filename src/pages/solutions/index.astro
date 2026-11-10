@@ -73,7 +73,7 @@ const secondarySolutions = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS
 
               <div class="pt-4 border-t border-borderMuted flex flex-wrap items-center gap-4">
                 <Button href={`/solutions/${sol.slug}`} variant="primary" size="md">
-                  Explore {sol.slug.toUpperCase()} Sub-URL →
+                  Explore {sol.title} →
                 </Button>
                 <Button href={`/start-a-project?service=${sol.slug}`} variant="secondary" size="md">
                   Request Quotation
@@ -88,7 +88,7 @@ const secondarySolutions = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS
       <div class="pt-8 border-t border-borderMuted">
         <div class="mb-10">
           <span class="font-display text-sm uppercase tracking-architectural text-ink font-bold block">
-            Supporting Architectural Works (Dedicated Sub-URLs)
+            Supporting Architectural Disciplines
           </span>
           <p class="font-body text-sm text-ink-muted mt-1">
             Complementary steel, ceiling, and interior capabilities that ensure seamless on-site coordination with our aluminium and glass systems.
@@ -99,7 +99,7 @@ const secondarySolutions = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS
           {secondarySolutions.map((sol) => (
             <div class="p-8 bg-surface border border-borderMuted flex flex-col justify-between group hover:border-gold transition-colors shadow-2xs">
               <div>
-                <span class="text-[10px] font-mono uppercase text-ink-muted tracking-wider font-semibold">Supporting Sub-URL</span>
+                <span class="text-[10px] font-mono uppercase text-ink-muted tracking-wider font-semibold">Supporting Discipline</span>
                 <h3 class="font-display text-2xl uppercase font-bold text-ink group-hover:text-gold transition-colors mt-1">
                   {sol.title}
                 </h3>
@@ -110,7 +110,7 @@ const secondarySolutions = [SOLUTIONS['steel'], SOLUTIONS['ceilings'], SOLUTIONS
 
               <div class="pt-6 border-t border-borderMuted mt-6">
                 <a href={`/solutions/${sol.slug}`} class="text-xs uppercase tracking-wider text-gold hover:text-gold-dark font-bold inline-flex items-center gap-1">
-                  <span>View Sub-Page Specifications</span>
+                  <span>View Detailed Specifications</span>
                   <span>→</span>
                 </a>
               </div>

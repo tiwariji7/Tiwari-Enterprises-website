@@ -57,11 +57,11 @@ const featuredProjects = PROJECTS.slice(0, 3);
             </div>
 
             <div class="pt-4 border-t border-borderMuted flex items-center justify-between text-xs">
-              <span class="text-ink-muted uppercase tracking-wider font-mono">
-                {project.materials[0].split(' ')[0]} alloy
+              <span class="text-ink-muted uppercase tracking-wider font-mono truncate max-w-[65%]">
+                {project.materials[0]}
               </span>
-              <a href={`/work/${project.slug}`} class="text-gold font-bold uppercase tracking-wider hover:underline inline-flex items-center gap-1">
-                <span>Case Study Sub-URL</span>
+              <a href={`/work/${project.slug}`} class="text-gold font-bold uppercase tracking-wider hover:underline inline-flex items-center gap-1 shrink-0">
+                <span>View Case Study</span>
                 <span>→</span>
               </a>
             </div>
