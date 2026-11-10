@@ -1,0 +1,195 @@
+---
+import { SITE_CONFIG } from '../../utils/seo';
+
+const defaultMessage =
+  'Hello Tiwari Enterprises, I would like to inquire about architectural aluminium and glass solutions for my project in Pune.';
+const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(defaultMessage)}`;
+---
+
+<!-- Fixed Floating WhatsApp Widget with Interactive Greeting Popup -->
+<aside
+  class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3 select-none"
+  aria-label="Direct WhatsApp Consultation"
+  id="wa-widget-container"
+>
+  <!-- Small Interactive Greeting Popup Card -->
+  <div
+    id="wa-popup-card"
+    role="dialog"
+    aria-labelledby="wa-agent-title"
+    aria-describedby="wa-agent-desc"
+    class="w-[310px] sm:w-[340px] max-w-[calc(100vw-2.5rem)] rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.6)] border border-white/15 bg-charcoal text-offWhite transition-all duration-300 transform opacity-0 translate-y-4 scale-95 pointer-events-none origin-bottom-right"
+  >
+    <!-- Card Header -->
+    <div class="bg-gradient-to-r from-deepNavy to-navySoft px-4 py-3.5 flex items-center justify-between border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <!-- Brand Monogram Avatar with Active Online Status Beacon -->
+        <div class="relative w-10 h-10 rounded-full bg-charcoal p-1 border border-metallicGold/40 shadow-inner flex items-center justify-center shrink-0">
+          <img
+            src="/images/brand/logo-mark-white.webp"
+            alt="Tiwari Enterprises"
+            class="w-full h-full object-contain"
+            width="32"
+            height="32"
+            loading="lazy"
+          />
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-[#25D366] border-2 border-deepNavy rounded-full" aria-hidden="true"></span>
+        </div>
+        
+        <div>
+          <h3 id="wa-agent-title" class="font-body text-sm font-bold text-white tracking-wide">
+            Tiwari Enterprises
+          </h3>
+          <p id="wa-agent-desc" class="font-mono text-[11px] text-[#25D366] flex items-center gap-1.5 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+            Online • Technical Desk
+          </p>
+        </div>
+      </div>
+
+      <!-- Close / Dismiss Button -->
+      <button
+        type="button"
+        id="wa-close-btn"
+        class="text-white/60 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-metallicGold"
+        aria-label="Close WhatsApp chat popup"
+      >
+        <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Card Body: Architectural Chat Bubble -->
+    <div class="p-4 bg-charcoal/95 flex flex-col gap-3">
+      <div class="bg-deepNavy/80 border border-white/10 rounded-xl rounded-tl-none p-3.5 shadow-sm text-xs text-white/90 leading-relaxed">
+        <p class="font-medium text-white mb-1.5">
+          Namaste! 👋 Need expert guidance?
+        </p>
+        <p class="text-offWhite/80">
+          Consult with our engineering team for Aluminium Sliding Systems, Structural Glazing, or Frameless Railings in Pune.
+        </p>
+        <span class="block text-[10px] text-white/40 text-right mt-1.5 font-mono">
+          Just now ✓✓
+        </span>
+      </div>
+
+      <!-- Action Button inside Card -->
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        id="wa-start-chat-btn"
+        class="w-full py-2.5 px-4 bg-[#25D366] hover:bg-[#20bd5a] active:bg-[#1caa51] text-charcoal font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-[0_4px_16px_rgba(37,211,102,0.35)] flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+        aria-label="Start WhatsApp conversation with Tiwari Enterprises"
+      >
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.69-8.24 8.24-8.24zm4.52 11.45c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z" />
+        </svg>
+        <span>Start WhatsApp Chat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating Green Action Button -->
+  <button
+    type="button"
+    id="wa-toggle-btn"
+    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.45)] hover:shadow-[0_12px_32px_rgba(37,211,102,0.65)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer relative group focus-visible:outline-2 focus-visible:outline-white"
+    aria-label="Open WhatsApp conversation window"
+    aria-expanded="false"
+  >
+    <!-- Live Pulsating Online Dot Indicator -->
+    <span class="absolute top-0 right-0 flex h-3.5 w-3.5" aria-hidden="true">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-charcoal"></span>
+    </span>
+
+    <!-- Official WhatsApp SVG Icon -->
+    <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current drop-shadow-sm" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.69-8.24 8.24-8.24zm4.52 11.45c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z" />
+    </svg>
+
+    <!-- Desktop Tooltip -->
+    <span class="hidden md:group-hover:block absolute right-full mr-3 px-3 py-1.5 bg-charcoal/95 border border-white/20 text-white font-mono text-[11px] uppercase tracking-wider whitespace-nowrap rounded shadow-lg pointer-events-none">
+      Chat on WhatsApp
+    </span>
+  </button>
+</aside>
+
+<!-- Client Interactivity for WhatsApp Widget -->
+<script>
+  function initWhatsAppWidget() {
+    const popupCard = document.getElementById('wa-popup-card');
+    const toggleBtn = document.getElementById('wa-toggle-btn');
+    const closeBtn = document.getElementById('wa-close-btn');
+
+    if (!popupCard || !toggleBtn || !closeBtn) return;
+
+    let isOpen = false;
+
+    function openPopup() {
+      isOpen = true;
+      popupCard.classList.remove('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
+      popupCard.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closePopup() {
+      isOpen = false;
+      popupCard.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+      popupCard.classList.add('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      try {
+        sessionStorage.setItem('te_wa_dismissed', 'true');
+      } catch {
+        // Ignore storage restrictions
+      }
+    }
+
+    // Toggle on floating button click
+    toggleBtn.addEventListener('click', () => {
+      if (isOpen) {
+        closePopup();
+      } else {
+        openPopup();
+      }
+    });
+
+    // Close on dismiss button click
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closePopup();
+    });
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        closePopup();
+      }
+    });
+
+    // Auto-open greeting popup after 2.5s if not previously dismissed in session
+    let dismissed = false;
+    try {
+      dismissed = sessionStorage.getItem('te_wa_dismissed') === 'true';
+    } catch {
+      dismissed = false;
+    }
+
+    if (!dismissed) {
+      setTimeout(() => {
+        if (!isOpen) {
+          openPopup();
+        }
+      }, 2500);
+    }
+  }
+
+  // Initialize on DOM load and client page transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWhatsAppWidget);
+  } else {
+    initWhatsAppWidget();
+  }
+</script>

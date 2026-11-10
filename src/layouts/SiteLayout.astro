@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../components/shell/SiteHeader.astro';
 import SiteFooter from '../components/shell/SiteFooter.astro';
+import WhatsAppWidget from '../components/ui/WhatsAppWidget.astro';
 import { SITE_CONFIG, generateLocalBusinessSchema, generateBreadcrumbSchema, type SEOProps } from '../utils/seo';
 import '../styles/global.css';
 
@@ -88,6 +89,9 @@ const breadcrumbSchema = breadcrumbs ? generateBreadcrumbSchema(breadcrumbs) : n
     </main>
 
     <SiteFooter />
+
+    <!-- Fixed Floating WhatsApp Support Widget with Interactive Popup -->
+    <WhatsAppWidget />
 
     <!-- Lenis Smooth Scroll Initialization -->
     <script>

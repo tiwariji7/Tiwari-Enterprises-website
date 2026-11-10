@@ -171,17 +171,6 @@ const heroSlides = [
         >
           {heroSlides[0].secondaryCta.label}
         </a>
-
-        <a
-          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(heroSlides[0].whatsappMsg)}`}
-          id="hero-whatsapp-cta"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-4 py-3 bg-[#25D366]/20 hover:bg-[#25D366] text-[#25D366] hover:text-charcoal border border-[#25D366]/60 backdrop-blur-sm text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-1.5 transition-all shadow-[0_4px_14px_rgba(0,0,0,0.5)] focus-visible:outline-2 focus-visible:outline-[#25D366]"
-          aria-label="Chat directly on WhatsApp about architectural projects in Pune"
-        >
-          <span>WhatsApp Chat →</span>
-        </a>
       </div>
     </div>
   </div>
@@ -261,7 +250,7 @@ const heroSlides = [
 </section>
 
 <!-- Production-Grade Architectural Slider Script -->
-<script define:vars={{ heroSlides, whatsappNumber: SITE_CONFIG.whatsapp }}>
+<script define:vars={{ heroSlides }}>
   const AUTOPLAY_INTERVAL = 7000;
   const TRANSITION_DURATION = 800;
 
@@ -284,7 +273,6 @@ const heroSlides = [
   const tagsList = document.getElementById('hero-tags-list');
   const primaryCta = document.getElementById('hero-primary-cta');
   const ctaLabel = document.getElementById('hero-cta-label');
-  const whatsappCta = document.getElementById('hero-whatsapp-cta');
 
   // Bottom Metadata
   const slideNumEl = document.getElementById('hero-slide-num');
@@ -397,12 +385,6 @@ const heroSlides = [
 
       if (primaryCta) primaryCta.setAttribute('href', current.primaryCta.href);
       if (ctaLabel) ctaLabel.textContent = current.primaryCta.label;
-      if (whatsappCta) {
-        whatsappCta.setAttribute(
-          'href',
-          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(current.whatsappMsg)}`
-        );
-      }
 
       if (slideNumEl) slideNumEl.textContent = current.indexStr;
       if (systemNameEl) systemNameEl.textContent = current.category;
