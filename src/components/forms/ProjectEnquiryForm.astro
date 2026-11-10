@@ -297,9 +297,9 @@ const puneLocations = [
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
-      }).catch(() => null);
+      });
 
-      if (response && !response.ok && response.status !== 404) {
+      if (!response.ok) {
         throw new Error(`Enquiry delivery returned status: ${response.status}`);
       }
 

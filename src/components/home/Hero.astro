@@ -331,7 +331,9 @@ const heroSlides = [
   canvas?.addEventListener('mouseenter', stopTimer);
   canvas?.addEventListener('mouseleave', startTimer);
   canvas?.addEventListener('focusin', stopTimer);
-  canvas?.addEventListener('focusout', startTimer);
+  canvas?.addEventListener('focusout', (e: FocusEvent) => {
+    if (!canvas.contains(e.relatedTarget as Node | null)) startTimer();
+  });
 
   startTimer();
 </script>
