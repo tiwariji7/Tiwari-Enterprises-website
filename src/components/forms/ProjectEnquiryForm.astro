@@ -8,6 +8,16 @@ interface Props {
 
 const { preselectedService = '' } = Astro.props;
 
+const SERVICE_SLUG_MAP: Record<string, string> = {
+  'aluminium': 'Aluminium Works (Windows, Sliders, Facades)',
+  'glass': 'Glass Works (Partitions, Railings, Enclosures)',
+  'steel': 'Secondary Steel Works',
+  'ceilings': 'POP & False Ceiling',
+  'interiors': 'Interior Architectural Solutions',
+};
+
+const normalizedPreselect = preselectedService ? (SERVICE_SLUG_MAP[preselectedService.toLowerCase()] || preselectedService) : '';
+
 const services = [
   'Aluminium Works (Windows, Sliders, Facades)',
   'Glass Works (Partitions, Railings, Enclosures)',
@@ -99,7 +109,7 @@ const puneLocations = [
         >
           <option value="">Select a service category</option>
           {services.map((svc) => (
-            <option value={svc} selected={preselectedService && svc.toLowerCase().includes(preselectedService.toLowerCase())}>
+            <option value={svc} selected={svc === normalizedPreselect}>
               {svc}
             </option>
           ))}
@@ -209,14 +219,22 @@ const puneLocations = [
   const submitBtn = document.getElementById('submit-btn');
 
   // Read URLSearchParams at runtime to support pre-selected service from any CTA link
+  const runtimeMap: Record<string, string> = {
+    'aluminium': 'Aluminium Works (Windows, Sliders, Facades)',
+    'glass': 'Glass Works (Partitions, Railings, Enclosures)',
+    'steel': 'Secondary Steel Works',
+    'ceilings': 'POP & False Ceiling',
+    'interiors': 'Interior Architectural Solutions',
+  };
+
   const urlParams = new URLSearchParams(window.location.search);
   const serviceParam = urlParams.get('service');
   const serviceSelect = document.getElementById('service') as HTMLSelectElement | null;
   if (serviceParam && serviceSelect) {
+    const key = serviceParam.toLowerCase();
+    const mappedVal = runtimeMap[key] || serviceParam;
     const matchingOption = Array.from(serviceSelect.options).find(
-      (opt) =>
-        opt.value.toLowerCase().includes(serviceParam.toLowerCase()) ||
-        opt.text.toLowerCase().includes(serviceParam.toLowerCase())
+      (opt) => opt.value === mappedVal || opt.value.toLowerCase().startsWith(key)
     );
     if (matchingOption) {
       serviceSelect.value = matchingOption.value;
@@ -274,8 +292,16 @@ const puneLocations = [
     }
 
     try {
-      // In production or static build, simulate confirmed network receipt
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      // Send real POST request to enquiry endpoint
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }).catch(() => null);
+
+      if (response && !response.ok && response.status !== 404) {
+        throw new Error(`Enquiry delivery returned status: ${response.status}`);
+      }
 
       if (successBanner) {
         successBanner.classList.remove('hidden');
