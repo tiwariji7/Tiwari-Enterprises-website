@@ -16,9 +16,9 @@ const {
 } = Astro.props;
 
 const dimensions = {
-  sm: { imgW: 'w-8', text: 'text-sm', sub: 'text-[9px]' },
-  md: { imgW: 'w-10 sm:w-11', text: 'text-base sm:text-lg', sub: 'text-[9px] sm:text-[10px]' },
-  lg: { imgW: 'w-14', text: 'text-xl', sub: 'text-xs' },
+  sm: { imgW: 'w-7 sm:w-8', text: 'text-xs sm:text-[13px]', sub: 'text-[8px] sm:text-[8.5px]' },
+  md: { imgW: 'w-9 sm:w-10', text: 'text-sm sm:text-[15px]', sub: 'text-[8px] sm:text-[9px]' },
+  lg: { imgW: 'w-12', text: 'text-base sm:text-lg', sub: 'text-[10px]' },
 }[size];
 
 const isDark = theme === 'dark';
@@ -27,7 +27,7 @@ const textColor = isDark ? 'text-white' : 'text-ink';
 const subColor = isDark ? 'text-white/70' : 'text-ink-muted';
 ---
 
-<div class={`inline-flex items-center gap-3 select-none ${className}`} id={id}>
+<div class={`inline-flex items-center gap-2 sm:gap-2.5 select-none ${className}`} id={id}>
   <!-- Official Vector-Clean WebP Monogram -->
   <img
     src={logoSrc}
@@ -41,11 +41,11 @@ const subColor = isDark ? 'text-white/70' : 'text-ink-muted';
   />
 
   {variant === 'full' && (
-    <div class="flex flex-col leading-tight">
-      <span class={`font-display font-bold tracking-architectural uppercase ${textColor} ${dimensions.text}`} data-logo-title>
+    <div class="flex flex-col justify-center leading-none gap-0.5">
+      <span class={`font-display font-bold tracking-[0.12em] uppercase leading-none ${textColor} ${dimensions.text}`} data-logo-title>
         TIWARI <span class="text-gold">ENTERPRISES</span>
       </span>
-      <span class={`font-body tracking-[0.22em] uppercase font-semibold ${subColor} ${dimensions.sub}`} data-logo-sub>
+      <span class={`font-body tracking-[0.18em] uppercase font-semibold leading-none ${subColor} ${dimensions.sub}`} data-logo-sub>
         Architectural Aluminium & Glass
       </span>
     </div>
