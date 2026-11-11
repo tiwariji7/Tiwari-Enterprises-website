@@ -1,11 +1,48 @@
-node_modules/
+# Build outputs
 dist/
 .astro/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Internal project & agent artifacts
 .agents/
 .aider-desk/
-.env*
+skills-lock.json
+tiwari-enterprises-PRD.md
+*.aider*
+
+# Environment files & secrets
+.env
+.env.production
+.env.local
+.env.*.local
+*.env
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
 
+# Editor & IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
