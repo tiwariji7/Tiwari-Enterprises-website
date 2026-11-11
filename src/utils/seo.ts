@@ -15,8 +15,10 @@ export const SITE_CONFIG = {
   positioning: 'Premium Aluminium, Glass & Architectural Solutions',
   domain: 'https://tiwarienterprises.in',
   defaultDescription: 'Tiwari Enterprises specialises in precision architectural aluminium systems and structural glass installations for luxury residences, commercial spaces, and villas in Pune and nearby areas.',
-  phone: '+91 98220 00000', // Verified placeholder for lead capture
-  whatsapp: '919822000000',
+  phone: '+91 87261 24342',
+  phoneSecondary: '+91 98892 40590',
+  whatsapp: '919889240590',
+  whatsappFormatted: '+91 98892 40590',
   email: 'contact@tiwarienterprises.in',
   city: 'Pune',
   state: 'Maharashtra',
@@ -35,7 +37,7 @@ export function generateLocalBusinessSchema() {
     logo: `${SITE_CONFIG.domain}/favicon.svg`,
     image: `${SITE_CONFIG.domain}/images/hero/hero-sliding.webp`,
     description: SITE_CONFIG.defaultDescription,
-    telephone: SITE_CONFIG.phone,
+    telephone: [SITE_CONFIG.phone, SITE_CONFIG.phoneSecondary],
     email: SITE_CONFIG.email,
     priceRange: '₹₹₹',
     address: {

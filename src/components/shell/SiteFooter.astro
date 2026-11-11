@@ -9,22 +9,22 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-site mx-auto px-5 sm:px-8">
     <!-- Top Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-borderMuted">
-      <!-- Col 1: Brand & Philosophy (5 cols) -->
-      <div class="lg:col-span-5 flex flex-col gap-6">
+      <!-- Col 1: Brand & Philosophy (4 cols) -->
+      <div class="lg:col-span-4 flex flex-col gap-5">
         <a href="/" class="focus-visible:outline-gold inline-flex items-center">
           <Logo size="md" theme="light" />
         </a>
         <p class="font-body text-sm text-ink-muted leading-relaxed max-w-sm">
           Architectural aluminium systems and structural glass solutions engineered for luxury residences, commercial spaces, and villas in Pune and nearby areas.
         </p>
-        <div class="flex items-center gap-3 text-xs tracking-wider uppercase text-gold font-semibold">
+        <div class="flex items-center gap-2.5 text-xs tracking-wider uppercase text-gold font-semibold font-mono">
           <span class="w-2 h-2 rounded-full bg-gold"></span>
           <span>Pune, Maharashtra, India</span>
         </div>
       </div>
 
-      <!-- Col 2: Solutions Sub-URLs (3 cols) -->
-      <div class="lg:col-span-3 flex flex-col gap-4">
+      <!-- Col 2: Solutions Sub-URLs (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
         <span class="font-display text-sm uppercase tracking-architectural text-ink font-bold">
           Solutions
         </span>
@@ -51,22 +51,64 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Col 4: Service Areas & Direct Enquiries (2 cols) -->
-      <div class="lg:col-span-2 flex flex-col gap-4">
+      <!-- Col 4: Direct Consultation & Contact Numbers (4 cols) -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
         <span class="font-display text-sm uppercase tracking-architectural text-ink font-bold">
-          Pune Coverage
+          Direct Contact &amp; Enquiries
         </span>
         <p class="font-body text-xs text-ink-muted leading-relaxed">
-          Baner, Wakad, Hinjewadi, Kothrud, Prabhat Road, Hadapsar, and Pimpri-Chinchwad.
+          Reach our architectural engineering team directly for site visits, drawings review, and estimations in Pune.
         </p>
-        <div class="pt-2 flex flex-col gap-2 text-xs font-body">
+
+        <!-- Prominent Contact Badges / Cards -->
+        <div class="flex flex-col gap-3 pt-1">
+          <!-- Contact 1: Primary Phone -->
           <a
-            href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Tiwari%20Enterprises,%20I%20would%20like%20to%20discuss%20a%20project.`}
-            class="text-gold hover:text-gold-dark inline-flex items-center gap-2 font-bold"
+            href={`tel:${SITE_CONFIG.phone.replace(/\\s+/g, '')}`}
+            class="group p-3 bg-paper-muted/60 hover:bg-surface border border-borderMuted hover:border-gold rounded-lg transition-all flex items-center justify-between gap-3 shadow-2xs"
+            aria-label="Call Tiwari Enterprises at 8726124342"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-white transition-colors">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-ink-muted">Direct Calling</span>
+                <span class="font-mono text-sm sm:text-base font-bold text-ink group-hover:text-gold transition-colors tracking-wide">
+                  +91 87261 24342
+                </span>
+              </div>
+            </div>
+            <span class="text-xs text-gold font-bold font-mono">CALL →</span>
+          </a>
+
+          <!-- Contact 2: WhatsApp & Direct Phone -->
+          <a
+            href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Hello Tiwari Enterprises, I would like to consult about an architectural project in Pune.')}`}
             target="_blank"
             rel="noopener noreferrer"
+            class="group p-3 bg-paper-muted/60 hover:bg-surface border border-borderMuted hover:border-[#25D366] rounded-lg transition-all flex items-center justify-between gap-3 shadow-2xs"
+            aria-label="WhatsApp Tiwari Enterprises at 9889240590"
           >
-            <span>→ WhatsApp Direct</span>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.69-8.24 8.24-8.24zm4.52 11.45c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z" />
+                </svg>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-[#25D366] font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                  WhatsApp &amp; Enquiries
+                </span>
+                <span class="font-mono text-sm sm:text-base font-bold text-ink group-hover:text-[#25D366] transition-colors tracking-wide">
+                  +91 98892 40590
+                </span>
+              </div>
+            </div>
+            <span class="text-xs text-[#25D366] font-bold font-mono">CHAT →</span>
           </a>
         </div>
       </div>
